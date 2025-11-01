@@ -47,7 +47,7 @@ Here are the populations and seats of these "New Counties" as of the 2020 Census
 | New Suffolk                     | Farmingville                        | 985,018    |
 
 ![We can see here that the "new" counties are all moved eastward such that "new" Suffolk is significantly smaller than the real Suffolk County.](moved-eastward.png)
-We can see here that the "new" counties are all moved eastward such that "new" Suffolk is significantly smaller than the real Suffolk County.
+In the above image, the real county boundaries are shown in red. We can see here that the "new" counties are all moved eastward such that "new" Suffolk is significantly smaller than the real Suffolk County.
 
 This was mostly just a fun project for me, but similar principles and algorithms can be used for applications like redistricting or subdividing organizations and clubs geographically.
 
