@@ -21,18 +21,18 @@ In everyday language, people tend to use the counties as a way to name sub-regio
 Thinking about these mismatches inspired me to try redividing Long Island into four regions while adhering to principles that will not split up densely populated ares, which tend to be regional cores, and instead try to place boundaries on the regional periphery where there is less likely to be social, physical, and transportation connectivity between either side of the boundary. In order to do this, went through a few steps:
 
 1. Gathered census tract geography and population data for the four counties of Long Island 
-2. Converted census tracts into centroid points and creating an [_Urquhart graph_](https://en.wikipedia.org/wiki/Urquhart_graph) using the centroids of these tracts, ensuring that small island tracts are connected to the rest of the graph by at least one edge while eliminating most long edges that cross water or are not useful to the algorithm. 
-3. Assigned the edge weights of the Urquhart graph using the formula described [below](#edge-weightcost-calculation-formula), giving lower edge weight between high-population tracts that are close together and higher edge weight between low-population tracts that are far apart. This reduces the edge weights within regional centers relative to their actual geographic distance.
-4. Created an all-nodes distance matrix and input this into a K-Medoids clustering algorithm to split the tracts into four clusters
+2. Converted census tracts into centroid points and creating an [_Urquhart graph_](https://en.wikipedia.org/wiki/Urquhart_graph) using the centroids of these tracts, ensuring that small island tracts are connected to the rest of the graph by at least one edge while eliminating most long edges that cross water or are not useful to the goal of clustering together nearby areas. 
+3. Assigned the edge weights of the Urquhart graph using the formula described [below](#edge-weightcost-calculation-formula), giving weight to edges connecting high-population tracts that are close together and higher weight to edges connecting low-population tracts that are far apart. This reduces the edge weights within regional centers relative to their actual geographic distance.
+4. Created an all-nodes distance matrix to use as input to a K-Medoids clustering algorithm. Configured the K-Medoids algorithm to group the tracts into four clusters
 
 {{< figure
 src="https://upload.wikimedia.org/wikipedia/commons/4/47/Urquhart_graph.svg"
 alt="Urquhart graph"
-caption="Urquhart graph. Author: Rocchini from Wikimedia Commons. License: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/deed.en"
+caption="An Urquhart graph. Author: Rocchini from Wikimedia Commons. License: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/deed.en"
 >}}
 
 
-The K-Medoids algorithm works by iteratively choosing centrally-located nodes, called _medoids_, from a dataset and assigning the rest of the nodes into _k_ number of clusters based on which central node is closest. Therefore, the previous prioritization of lower relative edge weight for high-population tracts with nearby neighbors results in a lower relative likelihood that the tracts at either end of these low-weight high-population edges will end up in different clusters, since their distance to medoid central node will be relatively similar.
+The K-Medoids algorithm works by iteratively choosing centrally-located nodes, called _medoids_, from a dataset and assigning the rest of the nodes into _k_ number of clusters based on which central node is closest. Therefore, my aforementioned prioritization of lower relative edge weight for high-population tracts with nearby neighbors results in a lower relative likelihood that the tracts at either end of these low-weight high-population edges will end up in different clusters, since their distance to medoid central node will be relatively similar.
 
 ### Edge Weight/Cost calculation formula
 
@@ -58,7 +58,7 @@ After running the K-Medoids algorithm with k=4, I obtained the following cluster
 
 ![Four "new" counties for Long Island. Base Map is Esri Topographical map](medioids-result.png)
 
-By design, the K-medoids algorithm will give a medoid: a centrally located node that for the purposes of this algorithm can be thought of as the "county seat" of each of these new counties.
+By design, the K-medoids algorithm will give a medoid: a centrally located node that for the purposes of this exercise can be thought of as the "county seat" of each of these new counties.
 
 Here are the populations and seats of these "New Counties" as of the 2020 Census, from west to east:
 
@@ -70,9 +70,11 @@ Here are the populations and seats of these "New Counties" as of the 2020 Census
 | New Suffolk                     | Farmingville                        | 985,018    |
 
 ![We can see here that the "new" counties are all moved eastward such that "new" Suffolk is significantly smaller than the real Suffolk County.](moved-eastward.png)
-In the above image, the real county boundaries are shown in red while my "New Counties" are demarcated by black lines. We can see here that the "new" counties are all moved eastward such that "New" Suffolk is significantly smaller than the real Suffolk County.
+In the above image, the real county boundaries are shown in red while my "New Counties" are demarcated by black lines. We can see here that the "new" counties are all shifted eastward such that "New" Suffolk is significantly smaller than the real Suffolk County.
 
-This algorithm on its own is not perfect. Part of Glen Cove was made an exclave of New Queens while being connected by land only to New Nassau.
+## Examining the boundaries
+
+Sometimes my algorithm did not perfectly preserve the clustering together of nearby densely populated regions. Part of Glen Cove, a more densely populated area of the North Shore of Nassau County, was made an exclave of New Queens while being connected by land only to New Nassau.
 
 ![Part of Glen Cove was made an exclave of New Queens while being connected by land only to New Nassau.](glen-cove.png)
 
@@ -95,6 +97,8 @@ There are also some interesting changes related to localities I mentioned earlie
 
 Additionally, Cold Spring Harbor and Farmingdale, both straddling the straight red line that separates Nassau and Suffolk Counties, are now both included near the middle of New Nassau (within the black boundary).
 ![Cold Spring Harbor and Farmingdale, both straddling the straight line that separates Nassau and Suffolk Counties, are now both included in New Nassau. Map from OpenStreetMap and ESRI](csh-and-farmingdale.png)
+
+## Final Words
 
 This was mostly just a fun project for me, but similar principles and algorithms can be used for applications like redistricting or subdividing organizations and clubs geographically.
 
