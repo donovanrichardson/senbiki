@@ -4,9 +4,12 @@ draft = true
 title = "Redrawing the Boundaries of Long Island's Counties"
 +++
 
-Long Island has four counties\*: Kings, Queens, Nassau, and Suffolk. Portions of the boundaries of these counties are demarcated by physical features, such as the Newtown Creek between Kings County (the borough of Brooklyn) and Queens, or Cold Spring Harbor between Nassau and Suffolk. But mostly the counties are separated by political boundaries which were drawn over 350 years ago to establish county and town-level governing institutions in the colony, and later the state, of New York. 
+Long Island has four counties: Kings, Queens, Nassau, and Suffolk\*. Portions of the boundaries of these counties are demarcated by physical features, such as the Newtown Creek between Kings County (the borough of Brooklyn) and Queens, or Cold Spring Harbor between Nassau and Suffolk. But mostly the counties are separated by political boundaries which were drawn over 350 years ago to establish county and town-level governing institutions in the colony, and later the state, of New York. 
 
-\* The term "Long Island" commonly applies only to the portion of the island not part of New York City: namely Nassau and Suffolk Counties
+\* Kings and Queens Counties are better known as the boroughs of Brooklyn and Queens, respectively, within New York City. In common usage the term "Long Island" often excludes the part of the island within New York City so that such usage includes only Nassau and Suffolk Counties. 
+{style="font-size:0.8em"}
+
+
 
 [//]: # (![1873 Comstock Map of Long Island showing Kings, Queens, and Suffolk Counties]&#40;comstock-li.png&#41;)
 
@@ -60,7 +63,7 @@ After running the K-Medoids algorithm with k=4, I obtained the following cluster
 
 ![Four "new" counties for Long Island. Base Map is Esri Topographical map](medioids-result.png)
 
-By design, the K-Medoids algorithm will give a medoid: a centrally located node that for the purposes of this exercise can be thought of as the "county seat" of each of these new counties.
+By design, the K-Medoids algorithm will give a medoid: a centrally located node that for the purposes of this exercise can be thought of as a center of gravity, or "county seat" of each of these new counties.
 
 Here are the populations and seats of these "New Counties" as of the 2020 Census, from west to east:
 
@@ -84,7 +87,7 @@ Other than this, the boundaries between the New Counties do not create exclaves,
 {{< figure
 src="new-nassau-queens.png"
 alt="On the South Shore, the boundary between New Nassau and New Queens largely follows bodies of water"
-caption="On the South Shore, the boundary between New Nassau and New Queens largely follows bodies of water. Map from OpenStreetMap and ESRI"
+caption="On the South Shore, the boundary between New Nassau and New Queens (black) largely follows bodies of water. Map from OpenStreetMap and ESRI"
 >}}
 
 {{< figure
@@ -95,10 +98,20 @@ caption="Highways, the Long Island Railroad, and the Connetquot River form much 
 
 There are also some interesting changes related to localities I mentioned earlier. Ridgewood, Queens, which borders Bushwick in Brooklyn, is now included in New Brooklyn.
 
-![Ridgewood is now in New Brooklyn. Map from OpenStreetMap and ESRI](ridgewood1.png)
+{{< figure
+src="ridgewood1.png"
+alt="Ridgewood, Queens is in close proximity to Bushwick in Brooklyn, while mostly being separated by cemeteries from the rest of Queens. In including Ridgewood in New Brooklyn (black line), my algorithm reflects the spatial separation between Ridgewood and other parts of Queens, and the closeness between Ridgewood and Brooklyn neighborhoods. The real-life boundary between Brooklyn and Queens is shown in red."
+caption="Ridgewood, Queens is in close proximity to Bushwick in Brooklyn, while mostly being separated by cemeteries from the rest of Queens. In including Ridgewood in New Brooklyn (southwest of the black line), my algorithm reflects the spatial separation between Ridgewood and other parts of Queens, and the closeness between Ridgewood and Brooklyn neighborhoods. The real-life boundary between Brooklyn and Queens is shown in red."
+>}}
 
 Additionally, Cold Spring Harbor and Farmingdale, both straddling the straight red line that separates Nassau and Suffolk Counties, are now both included near the middle of New Nassau (within the black boundary).
-![Cold Spring Harbor and Farmingdale, both straddling the straight line that separates Nassau and Suffolk Counties, are now both included in New Nassau. Map from OpenStreetMap and ESRI](csh-and-farmingdale.png)
+
+{{< figure
+src="csh-and-farmingdale.png"
+alt="Cold Spring Harbor and Farmingdale, circled in purple, both straddle the line between Nassau and Suffolk Counties. The village of Cold Spring Harbor is within Suffolk County, but its high school serves students in nearby Nassau County, and the esteemed Cold Spring Harbor Laboratory is also located in Nassau County. Farmingdale has an opposite situation: its incorporated village is completely within Nassau County, but there is Farmingdale State College and Republic Airport, two of the locality's most well-known institutions, are both located outside of the village in Suffolk County. The creation of New Nassau unifies both Cold Spring Harbor and Farmingdale so that each locality is located only in one so-called county."
+caption="Cold Spring Harbor and Farmingdale, circled in purple, both straddle the line between Nassau and Suffolk Counties. The village of Cold Spring Harbor is within Suffolk County, but its high school serves students in nearby Nassau County, and the esteemed Cold Spring Harbor Laboratory is also located in Nassau County. Farmingdale has an opposite situation: its incorporated village is completely within Nassau County, but Farmingdale State College and Republic Airport, two of the locality's most well-known institutions, are both located outside of the village in Suffolk County. The creation of New Nassau unifies both Cold Spring Harbor and Farmingdale so that each locality is located only in one so-called county."
+>}}
+
 
 ## Final Words
 

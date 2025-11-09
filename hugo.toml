@@ -3,3 +3,9 @@ languageCode = 'en-us'
 title = 'Senbiki'
 theme = "PaperMod"
 enableGitInfo = true
+[markup]
+[markup.goldmark]
+[markup.goldmark.parser]
+[markup.goldmark.parser.attribute]
+block = true
+title = true
