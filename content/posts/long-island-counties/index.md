@@ -117,4 +117,4 @@ caption="Cold Spring Harbor and Farmingdale, circled in purple, both straddle th
 
 This was mostly just a fun project for me, but similar principles and algorithms can be used for applications like redistricting or subdividing organizations and clubs geographically.
 
-The Git repository for this project will be made available soon!
+The Git repository for this project is available [here](https://github.com/donovanrichardson/block-county)
