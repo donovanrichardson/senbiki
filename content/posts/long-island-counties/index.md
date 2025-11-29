@@ -6,6 +6,10 @@ title = "Redrawing the Boundaries of Long Island's Counties"
     author = "Donovan Richardson"
 +++
 
+I have created an application, [available on GitHub](https://github.com/donovanrichardson/block-county), that allows me to split areas of the United States into subregions based on US Census population and boundary data. One of my first uses of this app was to replace the four counties of Long Island into four subregions based on my app's algorithm rather than by the historical accidents that created the four extant counties.
+
+## Background
+
 Long Island has four counties: Kings, Queens, Nassau, and Suffolk\*. Portions of the boundaries of these counties are demarcated by physical features, such as the Newtown Creek between Kings County (the borough of Brooklyn) and Queens, or Cold Spring Harbor between Nassau and Suffolk. But mostly the counties are separated by political boundaries which were drawn over 350 years ago to establish county and town-level governing institutions in the colony, and later the state, of New York. 
 
 \* Kings and Queens Counties are better known as the boroughs of Brooklyn and Queens, respectively, within New York City. In common usage the term "Long Island" often excludes the part of the island within New York City so that such usage includes only Nassau and Suffolk Counties. 
@@ -41,7 +45,7 @@ caption="An Urquhart graph. The light-colored eges belong to the Delaunay triang
 
 The K-Medoids algorithm works by iteratively choosing centrally-located nodes, called _medoids_, from a dataset and assigning the rest of the nodes into _k_ number of clusters based on which central node is closest. Therefore, my aforementioned prioritization of lower relative edge weight for high-population tracts with nearby neighbors results in a lower relative likelihood that the tracts at either end of these low-weight high-population edges will end up in different clusters, since their distance to the medoid node will be relatively similar.
 
-### Edge Weight/Cost calculation formula
+## Edge Weight/Cost calculation formula
 
 Given an Urquhart graph whose nodes represent census tracts:
 
