@@ -1,0 +1,5 @@
+serve locally:
+
+```
+hugo serve
+```

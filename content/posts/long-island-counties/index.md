@@ -2,6 +2,8 @@
 date = '2025-11-01T15:31:31-04:00'
 draft = false
 title = "Redrawing the Boundaries of Long Island's Counties"
+[params]
+    author = "Donovan Richardson"
 +++
 
 Long Island has four counties: Kings, Queens, Nassau, and Suffolk\*. Portions of the boundaries of these counties are demarcated by physical features, such as the Newtown Creek between Kings County (the borough of Brooklyn) and Queens, or Cold Spring Harbor between Nassau and Suffolk. But mostly the counties are separated by political boundaries which were drawn over 350 years ago to establish county and town-level governing institutions in the colony, and later the state, of New York. 
