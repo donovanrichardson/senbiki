@@ -29,13 +29,28 @@ In all I created 42 regions of the US based on my algorithm.
 - Chicago and Detroit
 - Minneapolis and Eau Claire
 - Peoria and Champaign
+- Saint Louis
 - Louisville and Nashville
 - Memphis and Jonesboro
 - Alexandria and Hattiesburg
 - Little Rock and Shreveport
+- Tulsa
 - Lake Ozark and Mountain Home
 - Kansas City and Topeka
 - Des Moines and Cedar Rapids
 - Omaha and Sioux Falls
 - Wichita and Salina
+- Garden City
+- Oklahoma City and Wichita Falls
+- Dallas and Houston
+- Albuquerque and El Paso
+- Denver and Grand Junction
+- Bismarck and Williston
+- Salt Lake City and Missoula
+- Los Angeles and Phoenix
+- Sacramento and San Jose
+- Reno and Carson City
+- Medford and Eureka
+- Portland and Salem
+- Seattle and Spokane
 
