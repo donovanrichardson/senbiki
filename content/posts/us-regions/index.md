@@ -14,7 +14,7 @@ In all I created 42 regions of the US based on my algorithm.
 - "Boston and Providence"
 - "New York and Philadelphia"
 - Washington and Baltimore
-- South Delmarva
+- Sussex and St. Mary's Counties
 - Richmond and Norfolk
 - Raleigh and Charlotte
 - Charleston and Augusta
@@ -29,18 +29,18 @@ In all I created 42 regions of the US based on my algorithm.
 - Chicago and Detroit
 - Minneapolis and Eau Claire
 - Peoria and Champaign
-- Saint Louis
+- Hannibal and Saint Louis
 - Louisville and Nashville
 - Memphis and Jonesboro
 - Alexandria and Hattiesburg
 - Little Rock and Shreveport
-- Tulsa
+- Tulsa and Springfield, Missouri
 - Lake Ozark and Mountain Home
 - Kansas City and Topeka
 - Des Moines and Cedar Rapids
 - Omaha and Sioux Falls
 - Wichita and Salina
-- Garden City
+- Garden City and Dodge City
 - Oklahoma City and Wichita Falls
 - Dallas and Houston
 - Albuquerque and El Paso
