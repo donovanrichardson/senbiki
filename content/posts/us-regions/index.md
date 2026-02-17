@@ -1,6 +1,8 @@
 ---
 title: "US Regions"
 date: 2026-02-16T20:01:11-05:00
+params:
+  author: "Donovan Richardson"
 ---
 
 In my last post I demonstrated an algorithm that splits areas of the United States (lower 48) into subregions based on US Census population and boundary data. 
@@ -13,7 +15,11 @@ I used approximately the same algorithm as I had used in my previous Long Island
 The inputs of this run of my algorithm were individual counties or county-equivalents of the lower 48 states.
 Additionally, I broke up a few regions at my own discretion because I thought they were too large: all of California except the very northern part had previously been in one region together with Phoenix, AZ. Most of Florida had also been included with most of South Carolina and all of Coastal Georgia. I decided to further break up those regions into two each, which are included in the map of all regions below.
 
-![42 generated regions](regions-map.png)
+{{< figure
+src="regions-map.png"
+alt="42 generated regions of the United States"
+caption="42 generated regions of the United States based on k-medoids clustering algorithm. Baselayer data (c) OpenStreetMap contributors, Microsoft, Facebook, Google, Esri Community Maps contributors, Map layer by Esri"
+>}}
 
 In all I created 42 regions of the US based on my algorithm. Below I am grouping them roughly by their incorporation of their territories into the The United States or their thirteen predecessor colonies; I've tried to name the regions based on the two major cities within their limits. In future posts I plan to go through these 42 clustered regions in order.
 
