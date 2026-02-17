@@ -1,0 +1,16 @@
+- Revere and Rockland/Brockton MA (includes Boston)
+- New Haven and Hartford MA
+- New Bedford and Harwich (Cape Cod) MA
+- Lowell and Beverly MA
+- Portland and Augusta ME
+- Burlington and Montpelier VT
+- Dover NH and Saco ME
+- Saint Johnsbury and Rutland VT
+- Lancaster MA and Rindge NH (includes Fitchburg MA)
+- Nashua and Manchester NH
+- Bangor and Caribou ME
+- Albany and Glens Falls NY
+- Springfield and Northampton MA
+- Providence RI and Norwich CT
+- Worcester and Framingham MA
+- Keene NH and Brattleboro VT
