@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Senbiki'
 theme = "PaperMod"
 enableGitInfo = true
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = ["lastmod", ":git", "date"]
+publishDate = ["publishDate", "date"]
 [markup]
 [markup.goldmark]
 [markup.goldmark.parser]
