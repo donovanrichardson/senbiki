@@ -1,3 +1,8 @@
+---
+date: 2026-05-26T01:19:16Z
+draft: true
+---
+
 - Senbiki (線引き) literally means drawing a line. 
   - It is a concept that developed Japanese urban planning during the mid-20th century by which urban regions are divided into urbanization-promotion areas and urbanization-control areas.
   - on urban planning maps, lines (are/were) literally drawn to delineate these two areas.

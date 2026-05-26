@@ -1,5 +1,5 @@
 baseURL = 'https://senbiki.me/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Senbiki'
 theme = "PaperMod"
 enableGitInfo = true
