@@ -4,7 +4,7 @@ title = 'Senbiki'
 theme = "PaperMod"
 enableGitInfo = true
 [frontmatter]
-date = ["date", "publishDate", "lastmod"]
+date = [":git", "date", "publishDate", "lastmod"]
 lastmod = ["lastmod", ":git", "date"]
 publishDate = ["publishDate", "date"]
 [markup]
