@@ -58,13 +58,15 @@ The [Census Bureau](https://www2.census.gov/geo/pdfs/partnerships/psap/G-650.pdf
 
 In states with a large number of islands or prominent water features, connecting islands or disjoint land areas to the mainland is necessary for METIS to successfully split states into multiple distrcts. 
 Experimenting with Rhode Island, the smallest state, which has two congressional districts and many islands and disjoint land areas, was a fruitful exercise in calibrating a strategy of connecting disjoint areas for the METIS run.
-I settled on a method which makes limited connections between different landmasses to ensure that places like Block Island and Newport Island can be conneted sensibly to the rest of Rhode Island without creating links that may seem to place these islands in totally incorrect districts. This is still a work in progress, and I anticipate that for some states I will need to introduce a functionality in which links cannot be made between certain areas. For example, Nassau County should not be directly connected to Westchester County or the Bronx in any run, since there are not transportation connections between these places. Similarly, there should not be any link made between Staten Island and Western New York. Both of these have happened in various runs of this algorithm.
+I settled on a method which makes limited connections between different landmasses to ensure that places like Block Island and Newport Island can be conneted sensibly to the rest of Rhode Island without creating links that may seem to place these islands in totally incorrect districts. 
+
+This is still a work in progress, and I anticipate that for some states I will need to introduce a functionality in which links cannot be made between certain areas. For example, Nassau County should not be directly connected to Westchester County or the Bronx in any run, since there are not transportation connections between these places. Similarly, there should not be any link made between Staten Island and Western New York, which have resulted in strangely shaped discontinuous districts. I expect to keep refining the algorithm to get better results.
 
 
 ## Gallery
 
 
-Below I show you some results of the algo:
+Below are some results of the redistrciting algorithm:
 
 ![Rhode Island: two districts](rhode-island.png)
 ![Louisiana: 6 districts](louisiana.png)
