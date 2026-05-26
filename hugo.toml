@@ -7,6 +7,10 @@ enableGitInfo = true
 date = [":git", "date", "publishDate", "lastmod"]
 lastmod = ["lastmod", ":git", "date"]
 publishDate = ["publishDate", "date"]
+[params]
+  [params.author]
+    name = "Donovan Richardson"
+
 [markup]
 [markup.goldmark]
 [markup.goldmark.parser]
