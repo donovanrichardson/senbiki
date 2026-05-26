@@ -18,12 +18,16 @@ Source code is available at https://github.com/donovanrichardson/redistrict
 After using the k-medoids graph algorithm mentioned in previous blog posts, I saw that similar principles could be used to create equal-population districts from census data.
 In researching how to accomplish this I came across the METIS algorithm, which is useful for partitioning graphs in a way that obeys various constraints.
 The relevant constraints here are minimum cut (partitioning the graph along fewest edges, or the along edges with the lowest cumulative weight) while ensuring that the number of nodes, or the cumulative weight of the nodes, is as equal as possible.
-Min cut is relevant to redistricting because in non-compact "gerrymandered" districts, long zig-zagging borders between districts can only be achieved when more edges than necessary are divided by the district.
-Imagine a 10-by-10 grid in which 50 blocks are in one district and 50 blocks are in the other. 
+
+While maintaining an equal cumulative node weight per cluster is directly relevant to maintaining equal district population in legislative districts, the relevance of a minimal edge cut might be less clear.
+But the min-cut constraint is also directly relevant to redistricting because in non-compact "gerrymandered" districts, long zig-zagging borders between districts can only be achieved when more edges than necessary are divided by the district boundary.
+A min cut tends to avoid this by only cutting as many edges as are necessary.
+
+Imagine a 10-by-10 square grid in which 50 blocks are in one district and 50 blocks are in the other. 
 In a simple districting where the top five rows are in one district and the bottom five are in another, there are just ten block edges which define the border between the two districts. 
 But in an extreme gerrymander scenario where district A contains the top row, district B contains the bottom row, and the other 8 rows contain ten columns alternating between columns in district A and columns in district B, there are 74 block edges that define the border between the two districts. 
-Yet each district is continuous and there is no need to traverse through district B in any path between two blocks in district A, and vice-versa.
-Because METIS will prefer a minimal edge cut, it will favor the first compact district example with 5 rows on top for district A and 5 rows on the bottom for B.
+Though each district is continuous and there is no need to traverse through district B in any path between two blocks in district A, and vice-versa, it is a definite gerrymander.
+Because METIS will prefer a minimal edge cut, it will favor the first compact district example over the gerrymandered example.
 
 ## Centrality preference
 
