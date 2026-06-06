@@ -23,9 +23,11 @@ While maintaining an equal cumulative node weight per cluster is directly releva
 But the min-cut constraint is also directly relevant to redistricting because in non-compact "gerrymandered" districts, long zig-zagging borders between districts can only be achieved when more edges than necessary are divided by the district boundary.
 A min cut tends to avoid this by only cutting as many edges as are necessary.
 
-Imagine a 10-by-10 square grid in which 50 blocks are in one district and 50 blocks are in the other. 
+![Compact vs Gerrymandered Districts](redistricting_illustration.png)
+
+In the image above, there are two different arrangements of a 10-by-10 square grid in which 50 blocks are in one district and 50 blocks are in the other. 
 In a simple districting where the top five rows are in one district and the bottom five are in another, there are just ten block edges which define the border between the two districts. 
-But in an extreme gerrymander scenario where district A contains the top row, district B contains the bottom row, and the other 8 rows contain ten columns alternating between columns in district A and columns in district B, there are 74 block edges that define the border between the two districts. 
+But in an extreme gerrymander scenario where district A contains the top row, district B contains the bottom row, and the other 8 rows contain ten columns alternating between columns in district A and columns in district B, there are 82 block edges that define the border between the two districts. 
 Though each district is continuous and there is no need to traverse through district B in any path between two blocks in district A, and vice-versa, it is a definite gerrymander.
 Because METIS will prefer a minimal edge cut, it will favor the first compact district example over the gerrymandered example.
 
@@ -66,8 +68,10 @@ This is still a work in progress, and I anticipate that for some states I will n
 ## Gallery
 
 
-Below are some results of the redistrciting algorithm:
+Below are some results of the redistrciting algorithm. Deviations from optimal district population
+are shown in absolute and percentage terms:
 
 ![Rhode Island: two districts](rhode-island.png)
 ![Louisiana: 6 districts](louisiana.png)
 ![Maine: 2 districts](maine.png)
+![New York: 26 districts](new-york.png)
