@@ -64,6 +64,8 @@ What was hard: coming up with the terminal abbreviations that appear in the pill
 
 Destination filter: this is a fundamental part of the design. If someone commutes between two stations, this is a useful feature, because not all trains that pass through a station actually stop there. LIRR branching already adds a level of complexity to the timetable, so by replacing the express/local signing that Japanese timetables tend to do with origin-destination choosing, I can still allow users to create useful timetables.
 
+Hours past 23: the LIRR is not the best example of how this is beneficial, because it tends to publish its GTFS data from midnight to midnight, since the MTA runs its subway and LIRR 24 hours a day. Boston's trains run from about 5 AM to 1 AM (0500 to 2500). Counting past 23 gives clarity on what service day is indicated. It is probably not useful for a Saturday commuter to see the last few trains of "Friday night" (1 AM) and then four hours of blank lines before the trains start at 5 AM again.
+
 ### How it got here
 
 Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version.
