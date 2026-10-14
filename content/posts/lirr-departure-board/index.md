@@ -77,7 +77,7 @@ Not yet implemented: one thing the LIRR might want to do is indicate on the time
 
 ### How it got here
 
-Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version. [Word screenshot to be supplied by the author.]
+Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version. [Word screenshot to be supplied by the author.] Caption: "My first attempt, from 2019: the Port Jefferson Branch weekday timetable at Huntington, made by hand in Word from the MTA's September 2019 timetable."
 
 First attempt (2019, the Word document: LIRR Port Jefferson Branch weekday service at Huntington, and a weekday S1 bus table Halesite to Amityville): I manually copied it from the official MTA timetable of September 2019.
 
