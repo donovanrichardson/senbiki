@@ -62,6 +62,8 @@ Pills: a simple clean design. Their shape also mimics that of the headsigns show
 
 What was hard: coming up with the terminal abbreviations that appear in the pills was up to my discretion. In September 2026, the beginning of a new schedule used terminal stations that had not been used before, which caused buggy behavior. This was fixed by adding new abbreviations for Central Islip and Farmingdale, plus ten "(Bus)" headsign variants [git: 54d1120, 2026-09-11, transit-board#3; the commit also added a coverage check that flags missing abbreviations].
 
+Destination filter: this is a fundamental part of the design. If someone commutes between two stations, this is a useful feature, because not all trains that pass through a station actually stop there. LIRR branching already adds a level of complexity to the timetable, so by replacing the express/local signing that Japanese timetables tend to do with origin-destination choosing, I can still allow users to create useful timetables.
+
 ### How it got here
 
 Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version.
