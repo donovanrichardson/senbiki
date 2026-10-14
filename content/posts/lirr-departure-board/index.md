@@ -32,19 +32,23 @@ Wanted to do this for LIRR
 
 ### The LIRR network
 
-Graphs before have been more dense. LIRR is more of a tree structure.
+The neighbor graphs in my earlier posts have many cycles. LIRR is more of a tree structure.
 
-Four western terminals Penn Atlantic gct and Long Island City. Eastward they branch into 8 major branches [east of Jamaica per Wikipedia's list, excluding the seasonal Belmont Park Branch and counting Babylon and Montauk as one line: Far Rockaway, Hempstead, Long Beach, Babylon/Montauk, Oyster Bay, Port Jefferson, Ronkonkoma, West Hempstead]. The farthest east of these are Port Jefferson in the north shore, the main line which runs through the center of the island but ends at the north fork, at Greenport, and the Montauk terminal.
+Four western terminals: Penn Station, Atlantic Terminal, Grand Central and Long Island City. Eastward from Jamaica they branch into 8 major branches.[^branches] The branches reach as far as Port Jefferson on the north shore; the main line, which runs through the center of the island, ends at Greenport on the north fork; and the Montauk line ends at Montauk.
 
 It is mostly a tree structure, with a few cycles such as the Central Branch between the Main Line and the Babylon/Montauk line. Almost all trains stop at Jamaica, a through station in Queens; the Port Washington Branch is the exception. But east of Jamaica, there are 8 major branch lines.
 
-Include a simple diagram of the LIRR: LIRR_schematic.svg (Wikimedia Commons, File:LIRR_schematic.svg, public domain; schematic as of 2013, current version 2023 by ComplexRational, original by NE2). It shows the terminals at left, Jamaica as the hub, one color per branch, and the Central Branch as the diagonal from the Ronkonkoma line to Babylon. Credit is not required; give it anyway.
+Include a simple diagram of the LIRR: LIRR_schematic.svg.[^diagram] It shows the terminals at left, Jamaica as the hub, one color per branch, and the Central Branch as the diagonal from the Ronkonkoma line to Babylon.
 
 ### The problem: destinations
 
 One difference between LIRR and many Japanese railroads may be the extensive branching of the LIRR. Trains heading eastward at Mineola may continue to Oyster Bay, Huntington, Port Jefferson, Ronkonkoma, or Patchogue. Similarly, trains westward from Port Jefferson often terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
 
-However many Japanese train timetables do branch, marking each departure with a destination character and printing a legend on the page (for example, JR East's timetable for Nishi-Ooi Station, Shonan-Shinjuku Line toward Yokohama and Ofuna, southbound: the legend row 行き先・経由 reads 無印=逗子 大=大船, and a separate row 列車種別・列車名 reads 無印=普通 快=快速, so each minute can carry a destination mark and a train-type mark; also JR East's timetable for Tachikawa Station, Chuo Line Rapid toward Tokyo and Shinjuku, weekday: 無印=東京 新=新宿 三=三鷹 武=武蔵小金井 大=大宮 千=千葉, six destinations; and Omiya Station, Saikyo and Kawagoe Lines toward Shinjuku and Osaki, weekday: 無印=新木場 新=新宿 海=海老名 池=池袋 大=大崎)
+However many Japanese train timetables do branch, marking each departure with a destination character and printing a legend on the page. For example:
+
+- JR East, Nishi-Ooi Station, Shonan-Shinjuku Line toward Yokohama and Ofuna, southbound: the legend row 行き先・経由 reads 無印=逗子 大=大船, and a separate row 列車種別・列車名 reads 無印=普通 快=快速, so each minute can carry a destination mark and a train-type mark.
+- JR East, Tachikawa Station, Chuo Line Rapid toward Tokyo and Shinjuku, weekday: 無印=東京 新=新宿 三=三鷹 武=武蔵小金井 大=大宮 千=千葉 (six destinations).
+- JR East, Omiya Station, Saikyo and Kawagoe Lines toward Shinjuku and Osaki, weekday: 無印=新木場 新=新宿 海=海老名 池=池袋 大=大崎.
 
 ## Body: the board
 
@@ -58,7 +62,7 @@ Goal: I wanted riders to create Japan-style departure timetables through a web i
 
 Pills: a simple clean design. Their shape also mimics that of the headsigns shown on the sides of LIRR cars.
 
-What was hard: coming up with the terminal abbreviations that appear in the pills was up to my discretion. In September 2026, the beginning of a new schedule used terminal stations that had not been used before, which caused buggy behavior. This was fixed by adding new abbreviations for Central Islip and Farmingdale, plus ten "(Bus)" headsign variants [git: 54d1120, 2026-09-11, transit-board#3; the commit also added a coverage check that flags missing abbreviations].
+What was hard: coming up with the terminal abbreviations that appear in the pills was up to my discretion. In September 2026, the beginning of a new schedule used terminal stations that had not been used before, which caused buggy behavior. Trips with destinations that had no abbreviation went unlabeled. So if most trains from Bethpage eastward terminate in Ronkonkoma, the Central Islip trains would appear to be Ronkonkoma trains, since both are shown with the "Unlabeled" label. This was fixed by adding new abbreviations for Central Islip and Farmingdale, plus ten "(Bus)" headsign variants.[^bug]
 
 Destination filter: this is a fundamental part of the design. If someone commutes between two stations, this is a useful feature, because not all trains that pass through a station actually stop there. LIRR branching already adds a level of complexity to the timetable, so by replacing the express/local signing that Japanese timetables tend to do with origin-destination choosing, I can still allow users to create useful timetables.
 
@@ -66,7 +70,7 @@ Hours past 23: the LIRR is not the best example of how this is beneficial, becau
 
 For an agency: all that is necessary is for the agency to choose an origin station and then inbound or outbound.
 
-New terminals: new GTFS data becomes available several days or weeks before that part of the schedule becomes current. Currently I have a script that watches for new termini so that I can create abbreviations as they come up [git: 2c100b8, 2026-09-11, check_headsign_coverage in the GTFS updater].
+New terminals: new GTFS data becomes available several days or weeks before that part of the schedule becomes current. Currently I have a script that watches for new termini so that I can create abbreviations as they come up.[^terminals]
 
 Japanese language: since this format was inspired by timetables I saw in Japan, I wanted a Japanese-language option. Perhaps people visiting from Japan would find it familiar.
 
@@ -76,14 +80,22 @@ Not yet implemented: one thing the LIRR might want to do is indicate on the time
 
 Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version.
 
-first attempt (2019, the Word document: LIRR Port Jefferson Branch weekday service at Huntington, and a weekday S1 bus table Halesite to Amityville) I manually copied from the official MTA timetable of September 2019
+First attempt (2019, the Word document: LIRR Port Jefferson Branch weekday service at Huntington, and a weekday S1 bus table Halesite to Amityville): I manually copied it from the official MTA timetable of September 2019.
 
-then generated from GTFS (2020, 2021), now the board built on OneBusAway
+Then generated from GTFS: a Node.js API in 2020 (deparch-api, from December 2020) and a Vue front end in the Japanese style in 2021 (deparch, from January 2021). Now the board is built on OneBusAway.
 
 Why OneBusAway: I can avoid reinventing the wheel.
 
-What OneBusAway provides: import, persist, and query GTFS data. They have designed an optimized data structure for GTFS data that I never attempted [from the OneBusAway source: the bundle builder reads GTFS into a transit graph, an object graph of agencies, stops, trips, blocks and routes, serialized to disk as TransitGraph.obj, alongside block-based stop-time indices (BlockTripIndices.obj) and a spatial index (an STRtree) over stop locations; sources: TransitGraphImpl and FederatedTransitDataBundle in onebusaway-application-modules; the docs only say "a series of files and optimized data structures"].
+What OneBusAway provides: import, persist, and query GTFS data. They have designed an optimized data structure for GTFS data that I never attempted.[^oba]
 
 ## Final words
 
 Try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters welcome.
+
+## Notes
+
+[^branches]: East of Jamaica per Wikipedia's list, excluding the seasonal Belmont Park Branch and counting Babylon and Montauk as one line: Far Rockaway, Hempstead, Long Beach, Babylon/Montauk, Oyster Bay, Port Jefferson, Ronkonkoma, West Hempstead.
+[^diagram]: Wikimedia Commons, File:LIRR_schematic.svg, public domain; schematic as of 2013, current version 2023 by ComplexRational, original by NE2. Credit is not required; give it anyway.
+[^bug]: Git: 54d1120, 2026-09-11, transit-board#3. The commit also added a coverage check that flags missing abbreviations.
+[^terminals]: Git: 2c100b8, 2026-09-11, check_headsign_coverage in the GTFS updater.
+[^oba]: From the OneBusAway source: the bundle builder reads GTFS into a transit graph, an object graph of agencies, stops, trips, blocks and routes, serialized to disk as TransitGraph.obj, alongside block-based stop-time indices (BlockTripIndices.obj) and a spatial index (an STRtree) over stop locations. Sources: TransitGraphImpl and FederatedTransitDataBundle in onebusaway-application-modules. The docs only say "a series of files and optimized data structures".
