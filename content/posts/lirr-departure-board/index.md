@@ -12,9 +12,14 @@ Section goal: state the main point (the Japanese departure-timetable format work
 
 I built a departure board for the LIRR in the Japanese timetable format: <https://bit.ly/lirrboard>
 
+- Why: I saw these timetables in Japan, and their complete absence in the US inspired this project.
+
 This far I have done graph algorithms, this time I will switch to something related but not algorithm. Transportation network.
 
 LIRR, one of the commuter rail networks
+
+- For readers outside New York: the LIRR is the commuter railroad between Long Island and New York City, with terminals in Manhattan, Brooklyn and Queens.
+- Main point: the LIRR branches far more than a typical Japanese line, but the Japanese format still works for it.
 
 ## Background
 
