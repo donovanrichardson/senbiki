@@ -58,6 +58,8 @@ Include images of mine, Ronkonkoma Inbound (board-ronkonkoma-inbound-full.png is
 
 Goal: I wanted riders to create Japan-style departure timetables through a web interface. I also wanted these to be potentially usable by an agency that may want to mass-produce departure timetables for each station.
 
+Pills: a simple clean design. Their shape also mimics that of the headsigns shown on the sides of LIRR cars.
+
 ### How it got here
 
 Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version.
