@@ -40,14 +40,16 @@ Include a simple diagram of the LIRR: LIRR_schematic.svg.[^diagram] It shows the
 
 ### The problem: destinations
 
-One difference between LIRR and many Japanese railroads may be the extensive branching of the LIRR. Trains heading eastward at Mineola may continue to Oyster Bay, Huntington, Port Jefferson, Ronkonkoma, or Patchogue. Similarly, trains westward from Port Jefferson often terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
+One difference between LIRR and many Japanese railroads is the extensive branching of the LIRR. Trains heading eastward at Jamaica may continue to 16 destinations on 9 branches (board-jamaica-outbound.png). Similarly, trains westward from Port Jefferson often terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
 
 However many Japanese train timetables also carry trains with different destinations, marking each departure with a destination character and printing a legend on the page. For example:
 
 - JR East, Nishi-Ooi Station, Shonan-Shinjuku Line toward Yokohama and Ofuna, southbound: the legend row 行き先・経由 reads 無印=逗子 大=大船, and a separate row 列車種別・列車名 reads 無印=普通 快=快速, so each minute can carry a destination mark and a train-type mark.
 - JR East, Tachikawa Station, Chuo Line Rapid toward Tokyo and Shinjuku, weekday: 無印=東京 新=新宿 三=三鷹 武=武蔵小金井 大=大宮 千=千葉 (six destinations).
 - JR East, Omiya Station, Saikyo and Kawagoe Lines toward Shinjuku and Osaki, weekday: 無印=新木場 新=新宿 海=海老名 池=池袋 大=大崎.
-- JR East, Tokyo Station, Chuo Line Rapid toward Shinjuku, Hachioji, Kofu and Matsumoto, Saturday and holiday: 無印=高尾 青=青梅 豊=豊田 大=大月 立=立川 武=武蔵小金井 八=八王子 甲=甲府 松=松本 竜=竜王 河=河口湖 国=国分寺 (twelve destinations).
+- JR East, Tokyo Station, Chuo Line Rapid toward Shinjuku, Hachioji, Kofu and Matsumoto, Saturday and holiday: 無印=高尾 青=青梅 豊=豊田 大=大月 立=立川 武=武蔵小金井 八=八王子 甲=甲府 松=松本 竜=竜王 河=河口湖 国=国分寺 (twelve destinations). Contrast with Jamaica: nine of these twelve (高尾, 豊田, 大月, 立川, 武蔵小金井, 八王子, 甲府, 竜王, 国分寺) are on the Chuo Line itself; 青梅 is on the Ome Line, which branches at Tachikawa; 河口湖 is on the Fujikyuko Line, another company's line reached by through service from Otsuki; 松本 is on the Shinonoi Line, beyond the Chuo Main Line. So most of Tokyo's destinations lie along one line, while Jamaica's sixteen are spread across nine branches.
+
+Since the LIRR branches this much, I adopted the LIRR's convention instead of single-character marks: the destination written out or abbreviated, color-coded by branch.
 
 ### How it got here
 
