@@ -72,6 +72,8 @@ first attempt (2019, the Word document: LIRR Port Jefferson Branch weekday servi
 
 then generated from GTFS (2020, 2021), now the board built on OneBusAway
 
+Why OneBusAway: I can avoid reinventing the wheel.
+
 ## Final words
 
 Try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters welcome.
