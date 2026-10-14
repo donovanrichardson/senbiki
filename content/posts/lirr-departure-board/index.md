@@ -74,6 +74,8 @@ then generated from GTFS (2020, 2021), now the board built on OneBusAway
 
 Why OneBusAway: I can avoid reinventing the wheel.
 
+What OneBusAway provides: import, persist, and query GTFS data. They have designed an optimized data structure for GTFS data that I never attempted [from the OneBusAway source: the bundle builder reads GTFS into a transit graph, an object graph of agencies, stops, trips, blocks and routes, serialized to disk as TransitGraph.obj, alongside block-based stop-time indices (BlockTripIndices.obj) and a spatial index (an STRtree) over stop locations; sources: TransitGraphImpl and FederatedTransitDataBundle in onebusaway-application-modules; the docs only say "a series of files and optimized data structures"].
+
 ## Final words
 
 Try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters welcome.
