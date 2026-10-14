@@ -1,6 +1,4 @@
-# Moving from graph algorithm to a transportation network
-
-[TITLE: still describes the blog, not the content; a specific, searchable title is open]
+# Japanese-Style Timetables for the LIRR
 
 ## What the reader should take away
 
