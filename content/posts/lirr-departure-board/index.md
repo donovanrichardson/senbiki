@@ -60,6 +60,8 @@ However many Japanese train timetables also carry trains with different destinat
 
 Since the LIRR branches this much, I adopted the LIRR's convention instead of single-character marks: the destination written out or abbreviated, color-coded by branch.
 
+Include image of the LIRR's convention: penn-station-lirr-board-2019-commons.jpg (the LIRR Train Information board at Penn Station, each destination written out on a bar colored by branch).[^pennboard] Alternative: penn-station-lirr-board-own-photo.jpg (my photo of a current digital board at Penn Station, same convention).
+
 ### How it got here
 
 Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version. [Word screenshot to be supplied by the author.] Caption: "My first attempt, from 2019: the Port Jefferson Branch weekday timetable at Huntington, made by hand in Word from the MTA's September 2019 timetable."
@@ -116,4 +118,5 @@ Try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters welcome: comm
 [^diagram]: Wikimedia Commons, File:LIRR_schematic.svg, public domain; schematic as of 2013, current version 2023 by ComplexRational, original by NE2. Credit is not required; give it anyway.
 [^bug]: Git: 54d1120, 2026-09-11, transit-board#3. The commit also added a coverage check that flags missing abbreviations.
 [^terminals]: Git: 2c100b8, 2026-09-11, check_headsign_coverage in the GTFS updater.
+[^pennboard]: Wikimedia Commons, File:LIRR Train Info board in Penn Station New York.jpg, by Bonnachoven, uploaded 2019-02-01, CC0 1.0 (public domain); credit not required, give it anyway.
 [^oba]: From the OneBusAway source: the bundle builder reads GTFS into a transit graph, an object graph of agencies, stops, trips, blocks and routes, serialized to disk as TransitGraph.obj, alongside block-based stop-time indices (BlockTripIndices.obj) and a spatial index (an STRtree) over stop locations. Sources: TransitGraphImpl and FederatedTransitDataBundle in onebusaway-application-modules. The docs only say "a series of files and optimized data structures".
