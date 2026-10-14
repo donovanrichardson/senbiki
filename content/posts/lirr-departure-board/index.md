@@ -18,7 +18,7 @@ LIRR, one of the commuter rail networks
 
 ## Background
 
-Section goal: show that the format is achievable for the LIRR despite its extra branching. Name the complication (Jamaica's 16 destinations on 9 branches), and point to the two existing practices the board combines: Japanese destination marks with a legend, and the LIRR's written-out destinations with a color per branch.
+Section goal: show that the format is achievable for the LIRR despite its extra branching, and how the project got here. Name the complication (Jamaica's 16 destinations on 9 branches); point to the two existing practices the board combines: Japanese destination marks with a legend, and the LIRR's written-out destinations with a color per branch; and trace the project's evolution: a 2019 timetable copied by hand, timetables generated from GTFS in 2020 and 2021, and the board today.
 
 ### The Japanese format
 
