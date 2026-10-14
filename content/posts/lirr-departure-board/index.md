@@ -63,13 +63,9 @@ First attempt (2019, the Word document: LIRR Port Jefferson Branch weekday servi
 
 Then generated from GTFS: a Node.js API in 2020 (deparch-api, from December 2020) and a Vue front end in the Japanese style in 2021 (deparch, from January 2021). Now the board is built on OneBusAway.
 
-Why OneBusAway: I can avoid reinventing the wheel.
-
-What OneBusAway provides: import, persist, and query GTFS data. They have designed an optimized data structure for GTFS data that I never attempted.[^oba]
-
 ## Body: the board
 
-Section goal: show the board and the decisions behind it. Riders learn what it does and how to use it; readers judging the engineering see the design choices, tradeoffs, what broke and how it was fixed, and what is not built yet; agencies see that a station and a direction are enough to produce a timetable. No direct appeal to agencies.
+Section goal: show the board, the decisions behind it, and what it is built with. Riders learn what it does and how to use it; readers judging the engineering see the design choices, tradeoffs, what broke and how it was fixed, and what is not built yet; agencies see that a station and a direction are enough to produce a timetable. No direct appeal to agencies.
 
 How the board does this: each departure is labeled with the destination of its own trip (from the GTFS trip data) as a colored pill next to the minute; a destination picker filters to the trains that stop at a chosen station; hours continue past 23 for trips after midnight.
 
@@ -94,6 +90,14 @@ New terminals: new GTFS data becomes available several days or weeks before that
 Japanese language: since this format was inspired by timetables I saw in Japan, I wanted a Japanese-language option. Perhaps people visiting from Japan would find it familiar.
 
 Not yet implemented: one thing the LIRR might want to do is indicate on the timetable which trips are timed for onward travel. This is something the LIRR prominently indicates on timetables and station signage, but it is not something I have seen in Japanese timetables. An inbound train from Montauk will usually have a transfer at its terminus of Jamaica that allows onward westward travel. An outbound train to Huntington will often arrive a few minutes before a Port Jefferson train so that eastbound passengers can transfer to the Port Jefferson train. This kind of indication is not yet implemented in my app.
+
+### How it's built
+
+[Components to describe: the OneBusAway server, the Java API, the Svelte front end, the GTFS updater, all run with Docker Compose.]
+
+Why OneBusAway: I can avoid reinventing the wheel.
+
+What OneBusAway provides: import, persist, and query GTFS data. They have designed an optimized data structure for GTFS data that I never attempted.[^oba]
 
 ## Final words
 
