@@ -91,7 +91,7 @@ Not yet implemented: one thing the LIRR might want to do is indicate on the time
 
 ## Final words
 
-Try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters welcome.
+Try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters welcome: comment on my LinkedIn post about the board, <https://lnkd.in/p/gvgmEXC4>.
 
 ## Notes
 
