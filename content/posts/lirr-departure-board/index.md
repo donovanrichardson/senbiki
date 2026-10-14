@@ -68,6 +68,8 @@ Hours past 23: the LIRR is not the best example of how this is beneficial, becau
 
 For an agency: all that is necessary is for the agency to choose an origin station and then inbound or outbound.
 
+New terminals: new GTFS data becomes available several days or weeks before that part of the schedule becomes current. Currently I have a script that watches for new termini so that I can create abbreviations as they come up [git: 2c100b8, 2026-09-11, check_headsign_coverage in the GTFS updater].
+
 Not yet implemented: one thing the LIRR might want to do is indicate on the timetable which trips are timed for onward travel. This is something the LIRR prominently indicates on timetables and station signage, but it is not common in Japanese timetables. An inbound train from Montauk will usually have a transfer at its terminus of Jamaica that allows onward westward travel. An outbound train to Huntington will often arrive a few minutes before a Port Jefferson train so that eastbound passengers can transfer to the Port Jefferson train. This kind of indication is not yet implemented in my app.
 
 ### How it got here
