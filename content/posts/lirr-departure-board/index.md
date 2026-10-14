@@ -66,6 +66,10 @@ Destination filter: this is a fundamental part of the design. If someone commute
 
 Hours past 23: the LIRR is not the best example of how this is beneficial, because it tends to publish its GTFS data from midnight to midnight, since the MTA runs its subway and LIRR 24 hours a day. Boston's trains run from about 5 AM to 1 AM (0500 to 2500). Counting past 23 gives clarity on what service day is indicated. It is probably not useful for a Saturday commuter to see the last few trains of "Friday night" (1 AM) and then four hours of blank lines before the trains start at 5 AM again.
 
+For an agency: all that is necessary is for the agency to choose an origin station and then inbound or outbound.
+
+Not yet implemented: one thing the LIRR might want to do is indicate on the timetable which trips are timed for onward travel. This is something the LIRR prominently indicates on timetables and station signage, but it is not common in Japanese timetables. An inbound train from Montauk will usually have a transfer at its terminus of Jamaica that allows onward westward travel. An outbound train to Huntington will often arrive a few minutes before a Port Jefferson train so that eastbound passengers can transfer to the Port Jefferson train. This kind of indication is not yet implemented in my app.
+
 ### How it got here
 
 Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version.
