@@ -49,7 +49,7 @@ Include a simple diagram of the LIRR: LIRR_schematic.svg.[^diagram] It shows the
 
 ### The problem: destinations
 
-One difference between LIRR and many Japanese railroads is the extensive branching of the LIRR. Trains heading eastward at Jamaica may continue to 16 destinations on 9 branches (board-jamaica-outbound.png). Similarly, trains westward from Port Jefferson often terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
+One difference between LIRR and many Japanese railroads is the extensive branching of the LIRR. Trains heading eastward at Jamaica may continue to 16 destinations on 8 major branches (board-jamaica-outbound.png; the board colors Babylon and Montauk separately, so the screenshot shows nine colors). Similarly, trains westward from Port Jefferson often terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
 
 However many Japanese train timetables also carry trains with different destinations, marking each departure with a destination character and printing a legend on the page. For example:
 
@@ -60,7 +60,7 @@ However many Japanese train timetables also carry trains with different destinat
 
 Since the LIRR branches this much, I adopted the LIRR's convention instead of single-character marks: the destination written out or abbreviated, color-coded by branch.
 
-Include image of the LIRR's convention: penn-station-lirr-board-2019-commons.jpg (the LIRR Train Information board at Penn Station, each destination written out on a bar colored by branch).[^pennboard] Alternative: penn-station-lirr-board-own-photo.jpg (my photo of a current digital board at Penn Station, same convention).
+Include image of the LIRR's convention: penn-station-lirr-board-2019-commons.jpg (the LIRR Train Information board at Penn Station, each destination written out on a bar colored by branch; Ronkonkoma and Yaphank share a color, two destinations on one branch).[^pennboard] Alternative: penn-station-lirr-board-own-photo.jpg (my photo of a current digital board at Penn Station, same convention).
 
 ### How it got here
 
