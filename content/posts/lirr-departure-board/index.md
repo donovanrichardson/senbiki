@@ -56,6 +56,8 @@ Include images of mine, Ronkonkoma Inbound (board-ronkonkoma-inbound-full.png is
 
 [GAP: design decisions and what was hard, in the author's words]
 
+Goal: I wanted riders to create Japan-style departure timetables through a web interface. I also wanted these to be potentially usable by an agency that may want to mass-produce departure timetables for each station.
+
 ### How it got here
 
 Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version.
