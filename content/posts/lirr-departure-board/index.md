@@ -53,7 +53,7 @@ However many Japanese train timetables also carry trains with different destinat
 
 How the board does this: each departure is labeled with the destination of its own trip (from the GTFS trip data) as a colored pill next to the minute; a destination picker filters to the trains that stop at a chosen station; hours continue past 23 for trips after midnight.
 
-Include image of mine: board-mineola-outbound.png (Mineola, Outbound, 24h, with destination pills HUN, OBY, PGE, PJN, RON and a 24 row).
+Include image of mine: board-mineola-outbound.png (Mineola, Outbound, 24h, with destination pills HUN, OBY, PGE, PJN, RON and a 24 row). [Caption: to be written; the author wants it simpler.]
 
 Include image of mine: board-ronkonkoma-inbound-top.png (Ronkonkoma, Inbound, with the "Trips toward" filter showing Penn Station labeled "Unlabeled", Atlantic Terminal ATL, and Grand Central GCT). Use this to show that only ATL and GCT trips carry a pill and Penn Station trips are unmarked, the same convention as 無印 in the Nishi-Ooi legend.
 
