@@ -60,6 +60,8 @@ Goal: I wanted riders to create Japan-style departure timetables through a web i
 
 Pills: a simple clean design. Their shape also mimics that of the headsigns shown on the sides of LIRR cars.
 
+What was hard: coming up with the terminal abbreviations that appear in the pills was up to my discretion. In September 2026, the beginning of a new schedule used terminal stations that had not been used before, which caused buggy behavior. This was fixed by adding new abbreviations for Central Islip and Farmingdale, plus ten "(Bus)" headsign variants [git: 54d1120, 2026-09-11, transit-board#3; the commit also added a coverage check that flags missing abbreviations].
+
 ### How it got here
 
 Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version.
