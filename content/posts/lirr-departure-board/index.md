@@ -24,7 +24,7 @@ I've been to Japan
 
 Japanese rail timetables are often presented in jikokuhyou format.
 
-Include image of Japan timetable: nishi-ooi-weekday.png (JR East, Nishi-Ooi Station, weekday, with both legend rows). Optionally nishi-ooi-saturday-holiday.png (same station, Saturday and holiday, which adds a third legend row ■=時刻変更, schedule change).
+Include image of Japan timetable: nishi-ooi-weekday-cropped.png (JR East, Nishi-Ooi Station, weekday, with both legend rows). Optionally nishi-ooi-saturday-holiday-cropped.png (same station, Saturday and holiday, which adds a third legend row ■=時刻変更, schedule change). Credit under the image: JR East timetable, Nishi-Ooi Station, timetables.jreast.co.jp.
 
 Wanted to do this for LIRR
 
