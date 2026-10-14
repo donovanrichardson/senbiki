@@ -36,7 +36,7 @@ Four western terminals: Penn Station, Atlantic Terminal, Grand Central and Long 
 
 It is mostly a tree structure, with a few cycles such as the Central Branch between the Main Line and the Babylon/Montauk line. Almost all trains stop at Jamaica, a through station in Queens; the Port Washington Branch is the exception. But east of Jamaica, there are 8 major branch lines.
 
-Include a simple diagram of the LIRR: LIRR_schematic.svg.[^diagram] It shows the terminals at left, Jamaica as the hub, one color per branch, and the Central Branch as the diagonal from the Ronkonkoma line to Babylon.
+Include a simple diagram of the LIRR: LIRR_schematic.svg.[^diagram] It shows the terminals at left, Jamaica as the hub, one color per branch, and the Central Branch as the diagonal from the Ronkonkoma line to Babylon. Caption: "A schematic of the LIRR. Each color is a branch; east of Jamaica they fan out toward the east end of the island. The diagonal from Hicksville to Babylon is the Central Branch."
 
 ### The problem: destinations
 
