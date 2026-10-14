@@ -36,15 +36,15 @@ Graphs before have been more dense. LIRR is more of a tree structure.
 
 Four western terminals Penn Atlantic gct and Long Island City. Eastward they branch into 8 major branches [east of Jamaica per Wikipedia's list, excluding the seasonal Belmont Park Branch and counting Babylon and Montauk as one line: Far Rockaway, Hempstead, Long Beach, Babylon/Montauk, Oyster Bay, Port Jefferson, Ronkonkoma, West Hempstead]. The farthest east of these are Port Jefferson in the north shore, the main line which runs through the center of the island but ends at the north fork, at Greenport, and the Montauk terminal.
 
-It is mostly a tree structure, with a few cycles such as the Central Branch between the Main Line and the Babylon/Montauk line. Almost all trains stop at Jamaica, a through station in Queens. But east of Jamaica, there are 8 major branch lines.
+It is mostly a tree structure, with a few cycles such as the Central Branch between the Main Line and the Babylon/Montauk line. Almost all trains stop at Jamaica, a through station in Queens; the Port Washington Branch is the exception. But east of Jamaica, there are 8 major branch lines.
 
 Include a simple diagram of the LIRR: LIRR_schematic.svg (Wikimedia Commons, File:LIRR_schematic.svg, public domain; schematic as of 2013, current version 2023 by ComplexRational, original by NE2). It shows the terminals at left, Jamaica as the hub, one color per branch, and the Central Branch as the diagonal from the Ronkonkoma line to Babylon. Credit is not required; give it anyway.
 
 ### The problem: destinations
 
-One difference between LIRR and many Japanese railroads may be the extensive branching of the LIRR. Trains heading eastward at Mineola may continue to Oyster Bay, Huntington, Port Jefferson, Ronkonkoma, or Patchogue. Similarly, trains westward from Port Jefferson typically terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
+One difference between LIRR and many Japanese railroads may be the extensive branching of the LIRR. Trains heading eastward at Mineola may continue to Oyster Bay, Huntington, Port Jefferson, Ronkonkoma, or Patchogue. Similarly, trains westward from Port Jefferson often terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
 
-However many Japanese train timetables do branch, marking each departure with a destination character and printing a legend on the page (for example, JR East's timetable for Nishi-Ooi Station, Shonan-Shinjuku Line toward Yokohama and Ofuna, southbound: the legend row 行き先・経由 reads 無印=逗子 大=大船, and a separate row 列車種別・列車名 reads 無印=普通 快=快速, so each minute can carry a destination mark and a train-type mark)
+However many Japanese train timetables do branch, marking each departure with a destination character and printing a legend on the page (for example, JR East's timetable for Nishi-Ooi Station, Shonan-Shinjuku Line toward Yokohama and Ofuna, southbound: the legend row 行き先・経由 reads 無印=逗子 大=大船, and a separate row 列車種別・列車名 reads 無印=普通 快=快速, so each minute can carry a destination mark and a train-type mark; also JR East's timetable for Tachikawa Station, Chuo Line Rapid toward Tokyo and Shinjuku, weekday: 無印=東京 新=新宿 三=三鷹 武=武蔵小金井 大=大宮 千=千葉, six destinations; and Omiya Station, Saikyo and Kawagoe Lines toward Shinjuku and Osaki, weekday: 無印=新木場 新=新宿 海=海老名 池=池袋 大=大崎)
 
 ## Body: the board
 
@@ -70,7 +70,7 @@ New terminals: new GTFS data becomes available several days or weeks before that
 
 Japanese language: since this format was inspired by timetables I saw in Japan, I wanted a Japanese-language option. Perhaps people visiting from Japan would find it familiar.
 
-Not yet implemented: one thing the LIRR might want to do is indicate on the timetable which trips are timed for onward travel. This is something the LIRR prominently indicates on timetables and station signage, but it is not common in Japanese timetables. An inbound train from Montauk will usually have a transfer at its terminus of Jamaica that allows onward westward travel. An outbound train to Huntington will often arrive a few minutes before a Port Jefferson train so that eastbound passengers can transfer to the Port Jefferson train. This kind of indication is not yet implemented in my app.
+Not yet implemented: one thing the LIRR might want to do is indicate on the timetable which trips are timed for onward travel. This is something the LIRR prominently indicates on timetables and station signage, but it is not something I have seen in Japanese timetables. An inbound train from Montauk will usually have a transfer at its terminus of Jamaica that allows onward westward travel. An outbound train to Huntington will often arrive a few minutes before a Port Jefferson train so that eastbound passengers can transfer to the Port Jefferson train. This kind of indication is not yet implemented in my app.
 
 ### How it got here
 
