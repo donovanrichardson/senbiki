@@ -8,6 +8,8 @@
 
 ## Intro
 
+Section goal: state the main point (the Japanese departure-timetable format works for a branching US commuter railroad), what I built, why, and the link. One sentence says the move away from graph algorithms is deliberate.
+
 I built a departure board for the LIRR in the Japanese timetable format: <https://bit.ly/lirrboard>
 
 This far I have done graph algorithms, this time I will switch to something related but not algorithm. Transportation network.
@@ -15,6 +17,8 @@ This far I have done graph algorithms, this time I will switch to something rela
 LIRR, one of the commuter rail networks
 
 ## Background
+
+Section goal: show that the format is achievable for the LIRR despite its extra branching. Name the complication (Jamaica's 16 destinations on 9 branches), and point to the two existing practices the board combines: Japanese destination marks with a legend, and the LIRR's written-out destinations with a color per branch.
 
 ### The Japanese format
 
@@ -65,6 +69,8 @@ What OneBusAway provides: import, persist, and query GTFS data. They have design
 
 ## Body: the board
 
+Section goal: show the board and the decisions behind it. Riders learn what it does and how to use it; readers judging the engineering see the design choices, tradeoffs, what broke and how it was fixed, and what is not built yet; agencies see that a station and a direction are enough to produce a timetable. No direct appeal to agencies.
+
 How the board does this: each departure is labeled with the destination of its own trip (from the GTFS trip data) as a colored pill next to the minute; a destination picker filters to the trains that stop at a chosen station; hours continue past 23 for trips after midnight.
 
 Include image of mine: board-mineola-outbound.png (Mineola, Outbound, 24h, with destination pills HUN, OBY, PGE, PJN, RON and a 24 row). [Caption: to be written; the author wants it simpler.]
@@ -90,6 +96,8 @@ Japanese language: since this format was inspired by timetables I saw in Japan, 
 Not yet implemented: one thing the LIRR might want to do is indicate on the timetable which trips are timed for onward travel. This is something the LIRR prominently indicates on timetables and station signage, but it is not something I have seen in Japanese timetables. An inbound train from Montauk will usually have a transfer at its terminus of Jamaica that allows onward westward travel. An outbound train to Huntington will often arrive a few minutes before a Port Jefferson train so that eastbound passengers can transfer to the Port Jefferson train. This kind of indication is not yet implemented in my app.
 
 ## Final words
+
+Section goal: restate the main point briefly, give the board link, and ask riders for feedback on the LinkedIn post. No direct appeal to agencies.
 
 Try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters welcome: comment on my LinkedIn post about the board, <https://lnkd.in/p/gvgmEXC4>.
 
