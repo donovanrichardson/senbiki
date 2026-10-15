@@ -126,6 +126,8 @@ What OneBusAway provides: import, persist, and query GTFS data. They have design
 
 Section goal: restate the main point briefly, give the board link, and ask riders for feedback on the LinkedIn post. No direct appeal to agencies.
 
+- Main point, restated: the Japanese timetable format works for a branching US commuter railroad.
+
 Try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters welcome: comment on my LinkedIn post about the board, <https://lnkd.in/p/gvgmEXC4>.
 
 ## Notes
