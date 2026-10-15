@@ -80,9 +80,11 @@ Include image of mine: board-mineola-outbound.png (Mineola, Outbound, 24h, with 
 
 Include image of mine: board-ronkonkoma-inbound-top.png (Ronkonkoma, Inbound, with the "Trips toward" filter showing Penn Station labeled "Unlabeled", Atlantic Terminal ATL, and Grand Central GCT). Use this to show that only ATL and GCT trips carry a pill and Penn Station trips are unmarked, the same convention as 無印 in the Nishi-Ooi legend. Caption: "The board for Ronkonkoma, inbound. Trains to Atlantic Terminal (ATL) and Grand Central (GCT) carry a pill; trains to Penn Station carry none, like 無印 on the Japanese timetable."
 
-Goal: I wanted riders to create Japan-style departure timetables through a web interface. I also wanted these to be potentially usable by an agency that may want to mass-produce departure timetables for each station.
+Why I built it: I wanted riders to create Japan-style departure timetables through a web interface. I also wanted these to be potentially usable by an agency that may want to mass-produce departure timetables for each station.
 
 Pills: a simple clean design. Their shape also mimics that of the headsigns shown on the sides of LIRR cars.
+
+- Unmarked destination: if one destination accounts for more than two thirds of a board's departures, it gets no pill and shows as "Unlabeled", the board's version of 無印. Otherwise every destination gets a pill.
 
 What was hard: coming up with the terminal abbreviations that appear in the pills was up to my discretion. In September 2026, the beginning of a new schedule used terminal stations that had not been used before, which caused buggy behavior. Trips with destinations that had no abbreviation went unlabeled. So if most trains from Bethpage eastward terminate in Ronkonkoma, the Central Islip trains would appear to be Ronkonkoma trains, since both are shown with the "Unlabeled" label. This was fixed by adding new abbreviations for Central Islip and Farmingdale, plus ten "(Bus)" headsign variants.[^bug]
 
@@ -100,7 +102,12 @@ Not yet implemented: one thing the LIRR might want to do is indicate on the time
 
 ### How it's built
 
-[Components to describe: the OneBusAway server, the Java API, the Svelte front end, the GTFS updater, all run with Docker Compose.]
+- OneBusAway server: built from OneBusAway's own Docker image, with a MySQL 8.4 database; it imports the GTFS bundle and answers schedule queries.
+- GTFS updater (Python): downloads the LIRR's GTFS feed from the MTA once a day, stages a new bundle for OneBusAway, and checks that every destination in the feed has an abbreviation.
+- Transit board API (Java): a REST API between OneBusAway and the web page. It works out each trip's destination, the hour rows (including hours past 23), and sibling platforms.
+- Front end (Svelte, served by nginx): the timetable grid, the pills, the destination filter, and the Japanese translation.
+- Monitor (Python): logs the host's CPU, memory and disk use and each container's resource use.
+- All of it runs with Docker Compose, with a memory and CPU limit on each service.
 
 Why OneBusAway: I can avoid reinventing the wheel.
 
