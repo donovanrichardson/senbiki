@@ -60,7 +60,7 @@ However many Japanese train timetables also carry trains with different destinat
 
 Since the LIRR branches this much, I adopted the LIRR's convention instead of single-character marks: the destination written out or abbreviated, color-coded by branch.
 
-Include image of the LIRR's convention: penn-station-lirr-board-2019-commons.jpg (the LIRR Train Information board at Penn Station, each destination written out on a bar colored by branch; Ronkonkoma and Yaphank share a color, two destinations on one branch).[^pennboard] Alternative: penn-station-lirr-board-own-photo.jpg (my photo of a current digital board at Penn Station, same convention).
+Include image of the LIRR's convention: penn-station-lirr-board-own-photo.jpg (my photo of the current digital departure board at Penn Station; each destination is written out on a bar colored by branch, and Huntington appears twice in the same blue). Also include penn-station-lirr-board-2019-commons.jpg (the older Solari board at Penn Station) for the shared-color point: Ronkonkoma and Yaphank share a color, two destinations on one branch.[^pennboard]
 
 ### How it got here
 
