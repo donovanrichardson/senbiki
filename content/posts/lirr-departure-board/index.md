@@ -76,6 +76,15 @@ Section goal: show the board, the decisions behind it, and what it is built with
 
 How the board does this: each departure is labeled with the destination of its own trip (from the GTFS trip data) as a colored pill next to the minute; a destination picker filters to the trains that stop at a chosen station; hours continue past 23 for trips after midnight.
 
+How to use it:
+
+1. Find your station: search for it on the home page. Each station has its own page.
+2. Choose a direction: Inbound (toward New York City) is selected by default; tap Outbound for the other way.
+3. Or choose a destination: type your destination station in "Search destinations" to see only the trains that stop there.
+4. Pick a date if you aren't traveling today.
+5. Read the grid: the hour is on the left and the minutes of each departure are on the right. A pill under a minute shows where that train ends; no pill means the station's main destination.
+6. Optional: switch between 12h and 24h time, or between English and 日本語.
+
 Include image of mine: board-mineola-outbound.png (Mineola, Outbound, 24h, with destination pills HUN, OBY, PGE, PJN, RON and a 24 row). [Caption: to be written; the author wants it simpler.]
 
 Include image of mine: board-ronkonkoma-inbound-top.png (Ronkonkoma, Inbound, with the "Trips toward" filter showing Penn Station labeled "Unlabeled", Atlantic Terminal ATL, and Grand Central GCT). Use this to show that only ATL and GCT trips carry a pill and Penn Station trips are unmarked, the same convention as 無印 in the Nishi-Ooi legend. Caption: "The board for Ronkonkoma, inbound. Trains to Atlantic Terminal (ATL) and Grand Central (GCT) carry a pill; trains to Penn Station carry none, like 無印 on the Japanese timetable."
