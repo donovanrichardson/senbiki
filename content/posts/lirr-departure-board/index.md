@@ -8,18 +8,18 @@
 
 ## Intro
 
-Section goal: state the main point (the Japanese departure-timetable format works for a branching US commuter railroad), what I built, why, and the link. One sentence says the move away from graph algorithms is deliberate.
+- This post will be a departure from the usual blog topic of graph algorithms, to another network related topic: transit timetables.
+- I have spent [some time] in Japan, and one thing that [verb]ed me is a format of timetable that i had never seen before
+- image and caption of timetable.
+- these timetables can be found at stations [preposition] many japanese railroad, metro, and bus systems
+- I thought these were efficient and could be done for transit systems outside japan.
+- The product of this [thought/idea] is a [web app](link) that generates departure timetables in this japanese format for all stations on the LIRR, the largest commuter railroad in [US/NA/Western Hemi (look this up)]
 
-I built a departure board for the LIRR in the Japanese timetable format: <https://bit.ly/lirrboard>
+<!-- Section goal: state the main point (the Japanese departure-timetable format works for a branching US commuter railroad), what I built, why, and the link. One sentence says the move away from graph algorithms is deliberate.
 
-- Why: I saw these timetables in Japan, and their complete absence in the US inspired this project.
+<https://bit.ly/lirrboard> -->
 
-This far I have done graph algorithms, this time I will switch to something related but not algorithm. Transportation network.
 
-LIRR, one of the commuter rail networks
-
-- For readers outside New York: the LIRR is the commuter railroad between Long Island and New York City, with terminals in Manhattan, Brooklyn and Queens.
-- Main point: the LIRR branches far more than a typical Japanese line, but the Japanese format still works for it.
 
 ## Background
 
@@ -31,104 +31,72 @@ I have interest in transit network
 
 I've been to Japan
 
-Japanese rail timetables are often presented in jikokuhyou format.
+Japanese rail timetables are often presented in a format in which hours are shown on the left, and the minute of a train's departure during this hour is shown in a row to the right of the hour. Above or below this minute value, additional info may be shown such as whether the train is express, where it terminates, whether it has reserved seating, etc.
 
-Include image of Japan timetable: nishi-ooi-weekday-cropped.png (JR East, Nishi-Ooi Station, weekday, with both legend rows). Optionally nishi-ooi-saturday-holiday-cropped.png (same station, Saturday and holiday, which adds a third legend row ■=時刻変更, schedule change). Caption for that image: "The same station's Saturday and holiday timetable. It adds a third legend row, 変更・注意マーク, where ■=時刻変更 flags a time that has changed; here it marks the 8:30 train." Credit under the image: JR East timetable, Nishi-Ooi Station, timetables.jreast.co.jp. Caption: "JR East's weekday timetable for Nishi-Ooi Station, southbound. A small mark under a minute shows where that train goes or what type it is. The legend at the bottom explains the marks: 無印=逗子 and 大=大船 for destinations, 無印=普通 and 快=快速 for train type."
+<!-- Include image of Japan timetable: nishi-ooi-weekday-cropped.png (JR East, Nishi-Ooi Station, weekday, with both legend rows). Optionally nishi-ooi-saturday-holiday-cropped.png (same station, Saturday and holiday, which adds a third legend row ■=時刻変更, schedule change). Caption for that image: "The same station's Saturday and holiday timetable. It adds a third legend row, 変更・注意マーク, where ■=時刻変更 flags a time that has changed; here it marks the 8:30 train." Credit under the image: JR East timetable, Nishi-Ooi Station, timetables.jreast.co.jp. Caption: "JR East's weekday timetable for Nishi-Ooi Station, southbound. A small mark under a minute shows where that train goes or what type it is. The legend at the bottom explains the marks: 無印=逗子 and 大=大船 for destinations, 無印=普通 and 快=快速 for train type." -->
 
 Wanted to do this for LIRR
 
-### The LIRR network
-
-The neighbor graphs in my earlier posts have many cycles. LIRR is more of a tree structure.
-
-Four western terminals: Penn Station, Atlantic Terminal, Grand Central and Long Island City. Eastward from Jamaica they branch into 8 major branches.[^branches] The branches reach as far as Port Jefferson on the north shore; the main line, which runs through the center of the island, ends at Greenport on the north fork; and the Montauk line ends at Montauk.
-
-It is mostly a tree structure, with a few cycles such as the Central Branch between the Main Line and the Babylon/Montauk line. Almost all trains stop at Jamaica, a through station in Queens; the Port Washington Branch is the exception. But east of Jamaica, there are 8 major branch lines.
-
-Include a simple diagram of the LIRR: LIRR_schematic.svg.[^diagram] It shows the terminals at left, Jamaica as the hub, one color per branch, and the Central Branch as the diagonal from the Ronkonkoma line to Babylon. Caption: "A schematic of the LIRR. Each color is a branch; east of Jamaica they fan out toward the east end of the island. The diagonal from Hicksville to Babylon is the Central Branch."
-
-### The problem: destinations
+### The LIRR network and The problem: destinations
 
 One difference between LIRR and many Japanese railroads is the extensive branching of the LIRR. Trains heading eastward at Jamaica may continue to 16 destinations on 8 major branches (board-jamaica-outbound.png; the board colors Babylon and Montauk separately, so the screenshot shows nine colors). Similarly, trains westward from Port Jefferson often terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
 
-However many Japanese train timetables also carry trains with different destinations, marking each departure with a destination character and printing a legend on the page. For example:
+Some Japanese train timetables also [carry] trains with different destinations, too. For a more extreme example, we can see that taking the "Chuo Line (Rapid)" westward from Tokyo [there can be 11 destination stations on four branches on weekdays].  ![pls crop this image](image.png).
 
-- JR East, Nishi-Ooi Station, Shonan-Shinjuku Line toward Yokohama and Ofuna, southbound: the legend row 行き先・経由 reads 無印=逗子 大=大船, and a separate row 列車種別・列車名 reads 無印=普通 快=快速, so each minute can carry a destination mark and a train-type mark.
-- JR East, Tachikawa Station, Chuo Line Rapid toward Tokyo and Shinjuku, weekday: 無印=東京 新=新宿 三=三鷹 武=武蔵小金井 大=大宮 千=千葉 (six destinations).
-- JR East, Omiya Station, Saikyo and Kawagoe Lines toward Shinjuku and Osaki, weekday: 無印=新木場 新=新宿 海=海老名 池=池袋 大=大崎.
-- JR East, Tokyo Station, Chuo Line Rapid toward Shinjuku, Hachioji, Kofu and Matsumoto, Saturday and holiday: 無印=高尾 青=青梅 豊=豊田 大=大月 立=立川 武=武蔵小金井 八=八王子 甲=甲府 松=松本 竜=竜王 河=河口湖 国=国分寺 (twelve destinations). Contrast with Jamaica: nine of these twelve (高尾, 豊田, 大月, 立川, 武蔵小金井, 八王子, 甲府, 竜王, 国分寺) are on the Chuo Line itself; 青梅 is on the Ome Line, which branches at Tachikawa; 河口湖 is on the Fujikyuko Line, another company's line reached by through service from Otsuki; 松本 is on the Shinonoi Line, beyond the Chuo Main Line. So most of Tokyo's destinations lie along one line, while Jamaica's sixteen are spread across nine branches.
+But Jamaica Station on the LIRR can one-up that, with 16 destinations on 8 branches on weekdays. ![alt text](image-1.png)
 
-Since the LIRR branches this much, I adopted the LIRR's convention instead of single-character marks: the destination written out or abbreviated, color-coded by branch.
+And unlike the Chuo Line, which branches out near the end of the line, the LIRR has branches that separate from the main line quite soon after Jamaica, on top of the Port Washington Branch that separates from the main line before it reaches Jamaica. In this situation, getting on the wrong train is more consequential than having to make an extra transfer [em-dash] Within an hour, nine passengers on nine different trains can be on nine different branches of the LIRR in places that are not near each other. 
 
-Include image of the LIRR's convention: penn-station-lirr-board-own-photo.jpg (my photo of the current digital departure board at Penn Station; each destination is written out on a bar colored by branch, and Huntington appears twice in the same blue). Also include penn-station-lirr-board-2019-commons.jpg (the older Solari board at Penn Station) for the shared-color point: Ronkonkoma and Yaphank share a color, two destinations on one branch.[^pennboard]
+This branching situation necessitates a different kind of [symbology] from that typically used on Japanese timetables. The paradigm that the MTA uses is that branches are color-coded so that signage for destinations on a particular branch bears the color of that branch. In my departure timetable web app I follow the same [symbology] paradigm. This paradigm is shown in the overhead departure board which was removed from Penn Station in the early 2020s. ![the first train, a Port Washington branch train, terminates in Great Neck before reaching Port Washington. Another train with the same color later [moves] all the way to Port Washington. (Long Beach bears the Orange color which looks smiilar here. Similarly, a Ronkonkoma train will terminate in Ronkonkoma about 90 minutes after departure, where passengers can soon meet another Ronkonkoma branch train bound for Yaphank. Both of these are colored purple. (about 20 minuts after departure, the Ronkonkoma train will also have a timed transfer with the brown-coded Far Rockaway train at Jamaica ))](penn-station-lirr-board-2019-commons.jpg)
 
-### How it got here
+
+<!-- Include image of the LIRR's convention: penn-station-lirr-board-own-photo.jpg (my photo of the current digital departure board at Penn Station; each destination is written out on a bar colored by branch, and Huntington appears twice in the same blue). Also include penn-station-lirr-board-2019-commons.jpg (the older Solari board at Penn Station) for the shared-color point: Ronkonkoma and Yaphank share a color, two destinations on one branch.[^pennboard] -->
+
+### How it got here (this section can go away)
 
 Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version. [Word screenshot to be supplied by the author.] Caption: "My first attempt, from 2019: the Port Jefferson Branch weekday timetable at Huntington, made by hand in Word from the MTA's September 2019 timetable."
 
 First attempt (2019, the Word document: LIRR Port Jefferson Branch weekday service at Huntington, and a weekday S1 bus table Halesite to Amityville): I manually copied it from the official MTA timetable of September 2019.
 
+![the 2019 timetrable](image-2.png)
+
 Then generated from GTFS: a Node.js API in 2020 (deparch-api, from December 2020) and a Vue front end in the Japanese style in 2021 (deparch, from January 2021). Now the board is built on OneBusAway.
 
 ## Body: the board
 
-Section goal: show the board, the decisions behind it, and what it is built with. Riders learn what it does and how to use it; readers judging the engineering see the design choices, tradeoffs, what broke and how it was fixed, and what is not built yet; agencies see that a station and a direction are enough to produce a timetable. No direct appeal to agencies.
+Now, to using it.
 
-How the board does this: each departure is labeled with the destination of its own trip (from the GTFS trip data) as a colored pill next to the minute; a destination picker filters to the trains that stop at a chosen station; hours continue past 23 for trips after midnight.
+After navigating to the website, you will get a screen asking for an origin station. Say you pick Woodside, a station in Western Queens about 10 minutes from Penn Station. Start typing Wood in the search bar and Woodside will appear. Or you can not type and scroll to W near the bottom of the page, since the stations are listed alphabetically. 
 
-How to use it:
+![alt text](image-4.png)
 
-1. Find your station: search for it on the home page. Each station has its own page.
-2. Choose a direction: Inbound (toward New York City) is selected by default; tap Outbound for the other way.
-3. Or choose a destination: type your destination station in "Search destinations" to see only the trains that stop there.
-4. Pick a date if you aren't traveling today.
-5. Read the grid: the hour is on the left and the minutes of each departure are on the right. A pill under a minute shows where that train ends; no pill means the station's main destination.
-6. Optional: switch between 12h and 24h time, or between English and 日本語.
+After you click on Woodside, the timetable will load. When it's loaded you can again use the search bar to search for destinations that are reachable from woodside. Let's try Great Neck
 
-Include image of mine: board-mineola-outbound.png (Mineola, Outbound, 24h, with destination pills HUN, OBY, PGE, PJN, RON and a 24 row). [Caption: to be written; the author wants it simpler.]
+![alt text](image-5.png)
 
-Include image of mine: board-ronkonkoma-inbound-top.png (Ronkonkoma, Inbound, with the "Trips toward" filter showing Penn Station labeled "Unlabeled", Atlantic Terminal ATL, and Grand Central GCT). Use this to show that only ATL and GCT trips carry a pill and Penn Station trips are unmarked, the same convention as 無印 in the Nishi-Ooi legend. Caption: "The board for Ronkonkoma, inbound. Trains to Atlantic Terminal (ATL) and Grand Central (GCT) carry a pill; trains to Penn Station carry none, like 無印 on the Japanese timetable."
+Recalling the pic before of the departure board featured overhead at Penn Station, you can see that most the departures from Woodside to Great Neck terminate either at Port Washington or Great Neck. The app is coded so that when a terminus makes up more than 2/3 of departures, it is left unmarked on the timetable. The header [indicates accordingly] that unlabeled departures terminate at Port Washington, while departures with a red indicator pill labeled `GNK` will terminate at Great Neck. And also just like the earlier overhead board, this board uses a red color scheme for the Port Washington branch destinations. Since this timetable deals only with Port Washington branch trains, most design elements [arealso red themed].
 
-Why I built it: I wanted riders to create Japan-style departure timetables through a web interface. I also wanted these to be potentially usable by an agency that may want to mass-produce departure timetables for each station.
+![alt text](image-3.png)
 
-Pills: a simple clean design. Their shape also mimics that of the headsigns shown on the sides of LIRR cars.
+Keeping more with the spirit of the departure timetable, we can also click on the Outbound button to choose only outbound trains from Woodside. Like a typical Japanese departure timetable, this shows all trains departing from this station on a given day.
 
-- Unmarked destination: if one destination accounts for more than two thirds of a board's departures, it gets no pill and shows as "Unlabeled", the board's version of 無印. Otherwise every destination gets a pill.
+![alt text](image-6.png)
 
-What was hard: coming up with the terminal abbreviations that appear in the pills was up to my discretion. In September 2026, the beginning of a new schedule used terminal stations that had not been used before, which caused buggy behavior. Trips with destinations that had no abbreviation went unlabeled. So if most trains from Bethpage eastward terminate in Ronkonkoma, the Central Islip trains would appear to be Ronkonkoma trains, since both are shown with the "Unlabeled" label. This was fixed by adding new abbreviations for Central Islip and Farmingdale, plus ten "(Bus)" headsign variants.[^bug]
+Here, the red accenting is gone, replaced with the rainbow of colors representing LIRR branches, and the blue color that is ubiquitous in MTA branding.
 
-Destination filter: this is a fundamental part of the design. If someone commutes between two stations, this is a useful feature, because not all trains that pass through a station actually stop there. LIRR branching already adds a level of complexity to the timetable, so by replacing the express/local signing that Japanese timetables tend to do with origin-destination choosing, I can still allow users to create useful timetables.
-
-Hours past 23: the LIRR is not the best example of how this is beneficial, because it tends to publish its GTFS data from midnight to midnight, since the MTA runs its subway and LIRR 24 hours a day. Boston's trains run from about 5 AM to 1 AM (0500 to 2500). Counting past 23 gives clarity on what service day is indicated. It is probably not useful for a Saturday commuter to see the last few trains of "Friday night" (1 AM) and then four hours of blank lines before the trains start at 5 AM again.
-
-For an agency: all that is necessary is for the agency to choose an origin station and then inbound or outbound.
-
-New terminals: new GTFS data becomes available several days or weeks before that part of the schedule becomes current. Currently I have a script that watches for new termini so that I can create abbreviations as they come up.[^terminals]
-
-Japanese language: since this format was inspired by timetables I saw in Japan, I wanted a Japanese-language option. Perhaps people visiting from Japan would find it familiar.
-
-Not yet implemented: one thing the LIRR might want to do is indicate on the timetable which trips are timed for onward travel. This is something the LIRR prominently indicates on timetables and station signage, but it is not something I have seen in Japanese timetables. An inbound train from Montauk will usually have a transfer at its terminus of Jamaica that allows onward westward travel. An outbound train to Huntington will often arrive a few minutes before a Port Jefferson train so that eastbound passengers can transfer to the Port Jefferson train. This kind of indication is not yet implemented in my app.
 
 ### How it's built
 
-- OneBusAway server: built from OneBusAway's own Docker image, with a MySQL 8.4 database; it imports the GTFS bundle and answers schedule queries.
+- OneBusAway server: built from OneBusAway's own Docker image, with a MySQL 8.4 database; it imports the GTFS bundle and answers schedule queries. The engine of this app, it was a convenient way for me to compile and query transit data without reinventing the wheel like I did with a pre-Claude Code iteration of this app in 2020[link pls].
 - GTFS updater (Python): downloads the LIRR's GTFS feed from the MTA once a day, stages a new bundle for OneBusAway, and checks that every destination in the feed has an abbreviation.
 - Transit board API (Java): a REST API between OneBusAway and the web page. It works out each trip's destination, the hour rows (including hours past 23), and sibling platforms.
-- Front end (Svelte, served by nginx): the timetable grid, the pills, the destination filter, and the Japanese translation.
+- Front end (Svelte, served by nginx): the timetable grid, the pills, the destination filter, and the Japanese translation/transliteration.
 - Monitor (Python): logs the host's CPU, memory and disk use and each container's resource use.
 - All of it runs with Docker Compose, with a memory and CPU limit on each service.
 
-Why OneBusAway: I can avoid reinventing the wheel.
-
-What OneBusAway provides: import, persist, and query GTFS data. They have designed an optimized data structure for GTFS data that I never attempted.[^oba]
-
 ## Final words
 
-Section goal: restate the main point briefly, give the board link, and ask riders for feedback on the LinkedIn post. No direct appeal to agencies.
-
-- Main point, restated: the Japanese timetable format works for a branching US commuter railroad.
-
-Try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters welcome: comment on my LinkedIn post about the board, <https://lnkd.in/p/gvgmEXC4>.
+Many of the design decisions I made were particular to the LIRR situation. I first tried to make a departure timetable [app thing] that will be universal, but different sustems have different structures to their services, and riders may expectn certain features that are not generalizable to every network. Still I'd like to do this for other NYC-area commuuter rail services too. For now, try it at <https://bit.ly/lirrboard>. Feedback from LIRR commuters is welcome on my LinkedIn post about the board, <https://lnkd.in/p/gvgmEXC4>.
 
 ## Notes
 
