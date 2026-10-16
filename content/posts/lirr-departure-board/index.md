@@ -13,7 +13,7 @@
 - image and caption of timetable.
 - these timetables can be found at stations [preposition] many japanese railroad, metro, and bus systems
 - I thought these were efficient and could be done for transit systems outside japan.
-- The product of this [thought/idea] is a [web app](link) that generates departure timetables in this japanese format for all stations on the LIRR, the largest commuter railroad in [US/NA/Western Hemi (look this up)]
+- The product of this [thought/idea] is a [web app](link) that generates departure timetables in this japanese format for all stations on the LIRR, the busiest commuter railroad in North America
 
 <!-- Section goal: state the main point (the Japanese departure-timetable format works for a branching US commuter railroad), what I built, why, and the link. One sentence says the move away from graph algorithms is deliberate.
 
@@ -41,7 +41,7 @@ Wanted to do this for LIRR
 
 One difference between LIRR and many Japanese railroads is the extensive branching of the LIRR. Trains heading eastward at Jamaica may continue to 16 destinations on 8 major branches (board-jamaica-outbound.png; the board colors Babylon and Montauk separately, so the screenshot shows nine colors). Similarly, trains westward from Port Jefferson often terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
 
-Some Japanese train timetables also [carry] trains with different destinations, too. For a more extreme example, we can see that taking the "Chuo Line (Rapid)" westward from Tokyo [there can be 11 destination stations on four branches on weekdays].  ![pls crop this image](image.png).
+Some Japanese train timetables also [carry] trains with different destinations, too. For a more extreme example, we can see that taking the "Chuo Line (Rapid)" westward from Tokyo [there can be 11 destination stations on four branches on weekdays].  ![JR East weekday timetable, Tokyo Station, Chuo Line Rapid westbound](tokyo-chuo-rapid-weekday-cropped.png).
 
 But Jamaica Station on the LIRR can one-up that, with 16 destinations on 8 branches on weekdays. ![alt text](image-1.png)
 
@@ -87,7 +87,7 @@ Here, the red accenting is gone, replaced with the rainbow of colors representin
 
 ### How it's built
 
-- OneBusAway server: built from OneBusAway's own Docker image, with a MySQL 8.4 database; it imports the GTFS bundle and answers schedule queries. The engine of this app, it was a convenient way for me to compile and query transit data without reinventing the wheel like I did with a pre-Claude Code iteration of this app in 2020[link pls].
+- OneBusAway server: built from OneBusAway's own Docker image, with a MySQL 8.4 database; it imports the GTFS bundle and answers schedule queries. The engine of this app, it was a convenient way for me to compile and query transit data without reinventing the wheel like I did with a pre-Claude Code iteration of this app in [2020](https://github.com/donovanrichardson/deparch-api).
 - GTFS updater (Python): downloads the LIRR's GTFS feed from the MTA once a day, stages a new bundle for OneBusAway, and checks that every destination in the feed has an abbreviation.
 - Transit board API (Java): a REST API between OneBusAway and the web page. It works out each trip's destination, the hour rows (including hours past 23), and sibling platforms.
 - Front end (Svelte, served by nginx): the timetable grid, the pills, the destination filter, and the Japanese translation/transliteration.
