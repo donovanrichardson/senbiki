@@ -23,7 +23,7 @@
 
 ## Background
 
-Section goal: show that the format is achievable for the LIRR despite its extra branching, and how the project got here. Name the complication (Jamaica's 16 destinations on 9 branches); point to the two existing practices the board combines: Japanese destination marks with a legend, and the LIRR's written-out destinations with a color per branch; and trace the project's evolution: a 2019 timetable copied by hand, timetables generated from GTFS in 2020 and 2021, and the board today.
+Section goal: show that the format is achievable for the LIRR despite its extra branching. Name the complication (Jamaica's 16 destinations on 9 branches); point to the two existing practices the board combines: Japanese destination marks with a legend, and the LIRR's written-out destinations with a color per branch.
 
 ### The Japanese format
 
@@ -51,16 +51,6 @@ This branching situation necessitates a different kind of [symbology] from that 
 
 
 <!-- Include image of the LIRR's convention: penn-station-lirr-board-own-photo.jpg (my photo of the current digital departure board at Penn Station; each destination is written out on a bar colored by branch, and Huntington appears twice in the same blue). Also include penn-station-lirr-board-2019-commons.jpg (the older Solari board at Penn Station) for the shared-color point: Ronkonkoma and Yaphank share a color, two destinations on one branch.[^pennboard] -->
-
-### How it got here (this section can go away)
-
-Include image of the 2019 Word document (lirrschedule.docx, Port Jefferson Branch weekday, Huntington) as the earlier hand-made version. [Word screenshot to be supplied by the author.] Caption: "My first attempt, from 2019: the Port Jefferson Branch weekday timetable at Huntington, made by hand in Word from the MTA's September 2019 timetable."
-
-First attempt (2019, the Word document: LIRR Port Jefferson Branch weekday service at Huntington, and a weekday S1 bus table Halesite to Amityville): I manually copied it from the official MTA timetable of September 2019.
-
-![the 2019 timetrable](image-2.png)
-
-Then generated from GTFS: a Node.js API in 2020 (deparch-api, from December 2020) and a Vue front end in the Japanese style in 2021 (deparch, from January 2021). Now the board is built on OneBusAway.
 
 ## Body: the board
 
