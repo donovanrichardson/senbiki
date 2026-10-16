@@ -41,7 +41,7 @@ Wanted to do this for LIRR
 
 One difference between LIRR and many Japanese railroads is the extensive branching of the LIRR. Trains heading eastward at Jamaica may continue to 16 destinations on 8 major branches (board-jamaica-outbound.png; the board colors Babylon and Montauk separately, so the screenshot shows nine colors). Similarly, trains westward from Port Jefferson often terminate at Huntington, but many commuters also take trains that terminate at Jamaica or Penn Station. Because of this it will be necessary when constructing a train timetable to indicate train destinations.
 
-Some Japanese train timetables also [carry] trains with different destinations, too. For a more extreme example, we can see that taking the "Chuo Line (Rapid)" westward from Tokyo [there can be 11 destination stations on four branches on weekdays].  ![JR East weekday timetable, Tokyo Station, Chuo Line Rapid westbound](tokyo-chuo-rapid-weekday-cropped.png).
+Some Japanese train timetables also [carry] trains with different destinations, too. For a more extreme example, we can see that taking the "Chuo Line (Rapid)" westward from Tokyo [there can be 11 destination stations on four branches on weekdays].  ![JR East weekday timetable, Tokyo Station, Chuo Line Rapid westbound](tokyo-chuo-rapid-weekday-cropped.png) Credit under the image: JR East timetable, Tokyo Station, timetables.jreast.co.jp..
 
 But Jamaica Station on the LIRR can one-up that, with 16 destinations on 8 branches on weekdays. ![alt text](image-1.png)
 
