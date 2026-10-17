@@ -126,12 +126,3 @@ I first tried to make a departure timetable generator that would be universal, b
 Still, I'd like to do this for other NYC-area commuter rail services too.
 For now, try it at <https://bit.ly/lirrboard>.
 Feedback is welcomed on my LinkedIn post about the board, <https://lnkd.in/p/gvgmEXC4>.
-
-## Notes
-
-[^branches]: Counted east of Jamaica from Wikipedia's list of LIRR branches, leaving out the seasonal Belmont Park Branch and counting Babylon and Montauk as one line: Far Rockaway, Hempstead, Long Beach, Babylon/Montauk, Oyster Bay, Port Jefferson, Ronkonkoma and West Hempstead.
-[^bug]: Fixed on September 11, 2026.
-    The same change added a check that flags any destination without an abbreviation.
-[^terminals]: The check runs in the GTFS updater each time it installs a changed schedule.
-[^oba]: Under the hood, OneBusAway's bundle builder reads GTFS into a transit graph, an object graph of agencies, stops, trips, blocks and routes, and saves it to disk alongside block-based stop-time indices and a spatial index over stop locations.
-    OneBusAway's documentation describes this only as "a series of files and optimized data structures".
