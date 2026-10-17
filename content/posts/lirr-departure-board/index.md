@@ -1,10 +1,12 @@
 # Japanese-Style Timetables for the LIRR
 
+<!--
 ## What the reader should take away
 
 - It is possible to make timetables in this format, and I made one.
 - They can use it to find trains that leave their desired station for a desired destination, or from their desired station inbound or outbound.
 - This format is a potential and useful format for transit timetables outside Japan.
+-->
 
 ## Intro
 
@@ -24,8 +26,10 @@ One sentence says the move away from graph algorithms is deliberate.
 
 ## Background
 
+<!--
 Section goal: show that the format is achievable for the LIRR despite its extra branching.
 Name the complication (Jamaica's 16 destinations on 9 branches); point to the two existing practices the board combines: Japanese destination marks with a legend, and the LIRR's written-out destinations with a color per branch.
+-->
 
 ### The Japanese format
 
