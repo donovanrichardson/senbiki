@@ -19,7 +19,7 @@ caption="JR East's weekday timetable for Abiko Station, Joban Line Rapid toward 
 
 These timetables can be found at stations on many Japanese railroad, metro, and bus systems.
 I thought they were efficient, and that the format could work for transit systems outside Japan.
-The product of this idea is a [web app](https://bit.ly/lirrboard) that generates departure timetables in this Japanese format for all stations on the LIRR, the busiest commuter railroad in North America.
+The product of this idea is a [web app](https://bit.ly/lirrboard) that generates departure timetables in this Japanese format for all stations on the Long Island Rail Road (LIRR), the busiest commuter railroad in North America.
 
 ## Background
 
@@ -51,7 +51,7 @@ caption="A route diagram of the Chuo Line (Rapid) from Tokyo to Otsuki. The Ome 
 >}}
 
 This much branching calls for a different kind of visualization from the one typically used on Japanese timetables.
-The MTA color-codes the LIRR's branches, so signage for a destination bears the color of its branch.
+The Metropolitan Transportation Authority (MTA) color-codes the LIRR's branches, so signage for a destination bears the color of its branch.
 In my departure timetable web app, I follow the same convention.
 The overhead departure board that was removed from Penn Station in the early 2020s shows it well.
 
@@ -111,7 +111,7 @@ Here, the red accenting is gone, replaced by the rainbow of colors representing 
 
 ### How it's built
 
-- OneBusAway server: built from OneBusAway's own Docker image, with a MySQL database; it imports the GTFS bundle and answers schedule queries.
+- OneBusAway server: built from OneBusAway's own Docker image, with a MySQL database; it imports the General Transit Feed Specification (GTFS) bundle and answers schedule queries.
   As the engine of this app, it gave me a convenient way to compile and query transit data without reinventing the wheel, as I did with a pre-Claude Code iteration of this app in [2020](https://github.com/donovanrichardson/deparch-api).
 - GTFS updater (Python): downloads the LIRR's GTFS feed from the MTA once a day, stages a new bundle for OneBusAway, and checks that every destination in the feed has an abbreviation.
 - Transit board API (Java): a REST API between OneBusAway and the web page.
