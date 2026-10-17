@@ -34,7 +34,7 @@ As someone interested in transit networks, I wanted to make this kind of timetab
 
 Japanese timetables already handle trains with different destinations.
 From Tokyo, the Chuo Line (Rapid) has 11 destinations on weekdays, but it runs as a single line all the way out to Tachikawa, where the Ome Line branches off; its other branches, at Otsuki and Shiojiri, are farther out still.
-The LIRR branches far more, and close to its western terminals: the Port Washington Branch splits off before Jamaica, and from Jamaica, trains go to 16 destinations on 8 major branches, most of which separate from the main line soon after.
+But the LIRR branches far more, and close to its western terminals: the Port Washington Branch splits off before Jamaica, and from Jamaica, trains go to 16 destinations on 8 major branches, most of which separate from the main line soon after.
 So a timetable for the LIRR has to show where each train goes.
 
 {{< figure
