@@ -125,7 +125,7 @@ Many of the design decisions I made were particular to the LIRR situation.
 I first tried to make a departure timetable generator that would be universal, but different systems have different structures to their services, and riders may expect certain features that are not generalizable to every network.
 Still, I'd like to do this for other NYC-area commuter rail services too.
 For now, try it at <https://bit.ly/lirrboard>.
-Feedback from LIRR commuters is welcome on my LinkedIn post about the board, <https://lnkd.in/p/gvgmEXC4>.
+Feedback is welcomed on my LinkedIn post about the board, <https://lnkd.in/p/gvgmEXC4>.
 
 ## Notes
 
