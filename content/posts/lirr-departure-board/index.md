@@ -61,8 +61,6 @@ So a timetable for the LIRR has to show where each train goes.
 
 ![A route diagram of the Chuo Line (Rapid) from Tokyo to Otsuki and the Ome Line from Tachikawa to Ome, with through service to the Fujikyuko Line and toward Kofu](chuoline-rapid-commons.svg)[^chuodiagram]
 
-![The board for Jamaica, outbound: 16 destinations](board-jamaica-outbound-desktop.png) 
-
 This branching situation necessitates a different kind of visualization from that typically used on Japanese timetables.
 The paradigm that the MTA uses is that branches are color-coded so that signage for destinations on a particular branch bears the color of that branch.
 In my departure timetable web app, I follow the same visualization paradigm.
