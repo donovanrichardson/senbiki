@@ -74,7 +74,7 @@ Also include penn-station-lirr-board-2019-commons.jpg (the older Solari board at
 
 ## Using the board
 
-Now, on to using it.
+Now, on to using the timetable generator.
 
 After navigating to the website, you will get a screen asking for an origin station.
 Say you pick Woodside, a station in Western Queens about 10 minutes from Penn Station.
