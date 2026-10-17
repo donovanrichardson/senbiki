@@ -61,19 +61,20 @@ So a timetable for the LIRR has to show where each train goes.
 
 ![A route diagram of the Chuo Line (Rapid) from Tokyo to Otsuki and the Ome Line from Tachikawa to Ome, with through service to the Fujikyuko Line and toward Kofu](chuoline-rapid-commons.svg)[^chuodiagram]
 
-![The board for Jamaica, outbound: 16 destinations](image-1.png) 
+![The board for Jamaica, outbound: 16 destinations](board-jamaica-outbound-desktop.png) 
 
 This branching situation necessitates a different kind of visualization from that typically used on Japanese timetables.
 The paradigm that the MTA uses is that branches are color-coded so that signage for destinations on a particular branch bears the color of that branch.
 In my departure timetable web app, I follow the same visualization paradigm.
 This paradigm is shown in the overhead departure board that was removed from Penn Station in the early 2020s.
+
 ![The first train, a Port Washington branch train, terminates in Great Neck before reaching Port Washington. Another train with the same color later runs all the way to Port Washington. (Long Beach bears the orange color, which looks similar here.) Similarly, a Ronkonkoma train will terminate in Ronkonkoma about 90 minutes after departure, where passengers can soon meet another Ronkonkoma branch train bound for Yaphank. Both of these are colored purple. (About 20 minutes after departure, the Ronkonkoma train will also have a timed transfer with the brown-coded Far Rockaway train at Jamaica.)](penn-station-lirr-board-2019-commons.jpg)
 
 
 <!-- Include image of the LIRR's convention: penn-station-lirr-board-own-photo.jpg (my photo of the current digital departure board at Penn Station; each destination is written out on a bar colored by branch, and Huntington appears twice in the same blue).
 Also include penn-station-lirr-board-2019-commons.jpg (the older Solari board at Penn Station) for the shared-color point: Ronkonkoma and Yaphank share a color, two destinations on one branch.[^pennboard] -->
 
-## Body: the board
+## Using the board
 
 Now, on to using it.
 
@@ -82,13 +83,13 @@ Say you pick Woodside, a station in Western Queens about 10 minutes from Penn St
 Start typing "Wood" in the search bar, and Woodside will appear.
 Or you can skip typing and scroll to W near the bottom of the page, since the stations are listed alphabetically.
 
-![alt text](image-4.png)
+![alt text](board-station-search.png)
 
 After you click on Woodside, the timetable will load.
 When it's loaded, you can again use the search bar to search for destinations that are reachable from Woodside.
 Let's try Great Neck.
 
-![alt text](image-5.png)
+![alt text](board-woodside-inbound-search.png)
 
 Recalling the earlier picture of the overhead departure board at Penn Station, you can see that all of the departures from Woodside to Great Neck terminate at either Port Washington or Great Neck.
 The app is coded so that when a terminus makes up more than 2/3 of departures, it is left unmarked on the timetable.
@@ -96,12 +97,12 @@ The header shows that these unlabeled departures terminate at Port Washington, w
 Also, just like the earlier overhead board, this board uses a red color scheme for the Port Washington branch destinations.
 Since this timetable deals only with Port Washington branch trains, most design elements share the red theme.
 
-![alt text](image-3.png)
+![alt text](board-woodside-to-great-neck.png)
 
 More in keeping with the spirit of a departure timetable, you can also click the Outbound button to choose only outbound trains from Woodside.
 Like a typical Japanese departure timetable, this shows all trains departing from this station on a given day.
 
-![alt text](image-6.png)
+![alt text](board-woodside-outbound.png)
 
 Here, the red accenting is gone, replaced by the rainbow of colors representing LIRR branches and the blue color that is ubiquitous in MTA branding.
 
@@ -126,15 +127,12 @@ Feedback from LIRR commuters is welcome on my LinkedIn post about the board, <ht
 
 ## Notes
 
-[^branches]: East of Jamaica per Wikipedia's list, excluding the seasonal Belmont Park Branch and counting Babylon and Montauk as one line: Far Rockaway, Hempstead, Long Beach, Babylon/Montauk, Oyster Bay, Port Jefferson, Ronkonkoma, West Hempstead.
-[^diagram]: Wikimedia Commons, File:LIRR_schematic.svg, public domain; schematic as of 2013, current version 2023 by ComplexRational, original by NE2.
-    Credit is not required; give it anyway.
-[^bug]: Git: 54d1120, 2026-09-11, transit-board#3.
-    The commit also added a coverage check that flags missing abbreviations.
-[^terminals]: Git: 2c100b8, 2026-09-11, check_headsign_coverage in the GTFS updater.
-[^pennboard]: Wikimedia Commons, File:LIRR Train Info board in Penn Station New York.jpg, by Bonnachoven, uploaded 2019-02-01, CC0 1.0 (public domain); credit not required, give it anyway.
-[^chuodiagram]: Wikimedia Commons, File:Chuoline_rapid.svg, public domain; by Nullport (2008), revised by S.S.Exp.Hashimoto (2009 to 2010).
-    Credit is not required; give it anyway.
-[^oba]: From the OneBusAway source: the bundle builder reads GTFS into a transit graph, an object graph of agencies, stops, trips, blocks and routes, serialized to disk as TransitGraph.obj, alongside block-based stop-time indices (BlockTripIndices.obj) and a spatial index (an STRtree) over stop locations.
-    Sources: TransitGraphImpl and FederatedTransitDataBundle in onebusaway-application-modules.
-    The docs only say "a series of files and optimized data structures".
+[^branches]: Counted east of Jamaica from Wikipedia's list of LIRR branches, leaving out the seasonal Belmont Park Branch and counting Babylon and Montauk as one line: Far Rockaway, Hempstead, Long Beach, Babylon/Montauk, Oyster Bay, Port Jefferson, Ronkonkoma and West Hempstead.
+[^diagram]: Diagram: "LIRR schematic" by NE2, updated by ComplexRational (2023), Wikimedia Commons, public domain.
+[^bug]: Fixed on September 11, 2026.
+    The same change added a check that flags any destination without an abbreviation.
+[^terminals]: The check runs in the GTFS updater each time it installs a changed schedule.
+[^pennboard]: Photo: "LIRR Train Info board in Penn Station New York" by Bonnachoven (2019), Wikimedia Commons, public domain (CC0).
+[^chuodiagram]: Diagram: "Chuoline rapid" by Nullport (2008), revised by S.S.Exp.Hashimoto, Wikimedia Commons, public domain.
+[^oba]: Under the hood, OneBusAway's bundle builder reads GTFS into a transit graph, an object graph of agencies, stops, trips, blocks and routes, and saves it to disk alongside block-based stop-time indices and a spatial index over stop locations.
+    OneBusAway's documentation describes this only as "a series of files and optimized data structures".
