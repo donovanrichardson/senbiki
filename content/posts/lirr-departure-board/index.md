@@ -9,12 +9,12 @@ params:
 ## Intro
 
 This post will be a departure from the usual blog topic of graph algorithms to another network-related topic: transit timetables.
-During the time I have spent in Japan, one thing that struck me was a format of timetable that I had never seen before.
+During the time I have spent in Japan, one thing that struck me was a timetable format that I had never seen before.
 
 {{< figure
 src="abiko-joban-rapid-weekday.png"
 alt="JR East weekday timetable for Abiko Station, Joban Line Rapid"
-caption="JR East's weekday timetable for Abiko Station, Joban Line Rapid toward Ueno, Tokyo and Shinagawa. A mark above a minute shows the train type (快 is rapid); a mark below shows its destination (unmarked is Ueno, 品 is Shinagawa, 松 is Matsudo). JR East timetable, Abiko Station, timetables.jreast.co.jp"
+caption="JR East's weekday timetable for Abiko Station, Joban Line Rapid toward Ueno, Tokyo and Shinagawa. A mark above a minute shows the train type (快 is rapid); a mark below shows its destination (unmarked is Ueno, 品 is Shinagawa, 松 is Matsudo). Timetable: JR East, Abiko Station, timetables.jreast.co.jp."
 >}}
 
 These timetables can be found at stations on many Japanese railroad, metro, and bus systems.
@@ -25,14 +25,14 @@ The product of this idea is a [web app](https://bit.ly/lirrboard) that generates
 
 ### The Japanese format
 
-Japanese rail timetables are often presented in a format in which hours are shown on the left, and the minute of a train's departure during this hour is shown in a row to the right of the hour.
-Above or below this minute value, additional info may be shown, such as whether the train is express, where it terminates, whether it has reserved seating, etc.
+Japanese rail timetables are often presented in a format in which hours are shown on the left, and the minute of each train's departure during that hour is shown in a row to the right of the hour.
+Above or below this minute value, additional info may be shown, such as whether the train is express, where it terminates, or whether it has reserved seating.
 
-As someone interested in transit networks, I wanted to do the same for the LIRR.
+As someone interested in transit networks, I wanted to make this kind of timetable for the LIRR.
 
 ### The LIRR network and the destination problem
 
-Japanese timetables also handle trains with different destinations.
+Japanese timetables already handle trains with different destinations.
 From Tokyo, the Chuo Line (Rapid) has 11 destinations on weekdays, but it runs as a single line all the way out to Tachikawa, where the Ome Line branches off; its other branches, at Otsuki and Shiojiri, are farther out still.
 The LIRR branches far more, and close to its western terminals: the Port Washington Branch splits off before Jamaica, and from Jamaica, trains go to 16 destinations on 8 major branches, most of which separate from the main line soon after.
 So a timetable for the LIRR has to show where each train goes.
@@ -50,15 +50,15 @@ alt="A route diagram of the Chuo Line (Rapid) and the Ome Line"
 caption="A route diagram of the Chuo Line (Rapid) from Tokyo to Otsuki. The Ome Line runs Chuo Line (Rapid) service after branching from the Chuo Line at Tachikawa. There are two other branches which exist beyond the edge of this diagram. Diagram: “Chuoline rapid” by Nullport (2008), revised by S.S.Exp.Hashimoto, Wikimedia Commons, public domain."
 >}}
 
-This branching situation necessitates a different kind of visualization from that typically used on Japanese timetables.
-The paradigm that the MTA uses is that branches are color-coded so that signage for destinations on a particular branch bears the color of that branch.
-In my departure timetable web app, I follow the same visualization paradigm.
-This paradigm is shown in the overhead departure board that was removed from Penn Station in the early 2020s.
+This much branching calls for a different kind of visualization from the one typically used on Japanese timetables.
+The MTA color-codes the LIRR's branches, so signage for a destination bears the color of its branch.
+In my departure timetable web app, I follow the same convention.
+The overhead departure board that was removed from Penn Station in the early 2020s shows it well.
 
 {{< figure
 src="penn-station-lirr-board-2019-commons.jpg"
 alt="The LIRR Train Information board at Penn Station in 2019, with destinations on bars colored by branch"
-caption="The first train, a Port Washington branch train, terminates in Great Neck before reaching Port Washington. Another train with the same color later runs all the way to Port Washington. (Long Beach bears the orange color, which looks similar here.) Similarly, a Ronkonkoma train will terminate in Ronkonkoma about 80 minutes after departure, where passengers can soon meet another Ronkonkoma branch train bound for Yaphank. Both of these are colored purple. (About 20 minutes after departure, the Ronkonkoma train will also have a timed transfer with the brown-coded Far Rockaway train at Jamaica.) Photo: “LIRR Train Info board in Penn Station New York” by Bonnachoven (2019), Wikimedia Commons, public domain (CC0)."
+caption="The first train, a Port Washington Branch train, terminates in Great Neck before reaching Port Washington. Another train with the same color later runs all the way to Port Washington. (Long Beach bears the orange color, which looks similar here.) Similarly, a Ronkonkoma train will terminate in Ronkonkoma about 80 minutes after departure, where passengers can soon meet another Ronkonkoma Branch train bound for Yaphank. Both of these are colored purple. (About 20 minutes after departure, the Ronkonkoma train will also have a timed transfer with the brown-coded Far Rockaway train at Jamaica.) Photo: “LIRR Train Info board in Penn Station New York” by Bonnachoven (2019), Wikimedia Commons, public domain (CC0)."
 >}}
 
 ## Using the board
@@ -66,8 +66,8 @@ caption="The first train, a Port Washington branch train, terminates in Great Ne
 Now, on to using the timetable generator.
 
 After navigating to the website, you will get a screen asking for an origin station.
-Say you pick Woodside, a station in Western Queens about 10 minutes from Penn Station.
-Start typing "Wood" in the search bar, and Woodside will appear.
+Say you pick Woodside, a station in western Queens about 10 minutes from Penn Station.
+Start typing "wood" in the search bar, and Woodside will appear.
 Or you can skip typing and scroll to W near the bottom of the page, since the stations are listed alphabetically.
 
 {{< figure
@@ -76,8 +76,8 @@ alt="Searching for an origin station on the departure board"
 caption="Typing “wood” on the home page lists Brentwood, Inwood, Westwood, Woodmere and Woodside."
 >}}
 
-After you click on Woodside, the timetable will load.
-When it's loaded, you can again use the search bar to search for destinations that are reachable from Woodside.
+Clicking Woodside loads its timetable.
+You can then use the search bar again to find destinations reachable from Woodside.
 Let's try Great Neck.
 
 {{< figure
@@ -87,10 +87,10 @@ caption="From Woodside, typing “gr” in the destination search offers Grand C
 >}}
 
 Recalling the earlier picture of the overhead departure board at Penn Station, you can see that all of the departures from Woodside to Great Neck terminate at either Port Washington or Great Neck.
-The app is coded so that when a terminus makes up more than 2/3 of departures, it is left unmarked on the timetable.
-The header shows that these unlabeled departures terminate at Port Washington, while departures with a red indicator pill labeled `GNK` will terminate at Great Neck.
-Also, just like the earlier overhead board, this board uses a red color scheme for the Port Washington branch destinations.
-Since this timetable deals only with Port Washington branch trains, most design elements share the red theme.
+The app is coded so that when a terminus makes up more than two-thirds of departures, it is left unmarked on the timetable.
+The header shows that these unlabeled departures terminate at Port Washington, while departures with a red indicator pill labeled `GNK` terminate at Great Neck.
+Also, just like the earlier overhead board, this board uses a red color scheme for Port Washington Branch destinations.
+Since this timetable deals only with Port Washington Branch trains, most design elements share the red theme.
 
 {{< figure
 src="board-woodside-to-great-neck.png"
@@ -99,7 +99,7 @@ caption="Woodside to Great Neck. Unmarked departures end at Port Washington; dep
 >}}
 
 More in keeping with the spirit of a departure timetable, you can also click the Outbound button to choose only outbound trains from Woodside.
-Like a typical Japanese departure timetable, this shows all trains departing from this station on a given day.
+Like a typical Japanese departure timetable, this shows every outbound train from Woodside on a given day.
 
 {{< figure
 src="board-woodside-outbound.png"
@@ -119,7 +119,7 @@ Here, the red accenting is gone, replaced by the rainbow of colors representing 
 - Front end (Svelte, served by nginx): the timetable grid, the pills, the destination filter, and the Japanese translation/transliteration.
 - All of it runs with Docker Compose, with a memory and CPU limit on each service.
 
-## Final words
+## Final Words
 
 Many of the design decisions I made were particular to the LIRR situation.
 I first tried to make a departure timetable generator that would be universal, but different systems have different structures to their services, and riders may expect certain features that are not generalizable to every network.
