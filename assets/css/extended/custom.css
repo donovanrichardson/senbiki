@@ -1,3 +1,7 @@
 :root {
     --main-width: 900px;
 }
+figure.white-bg img {
+    background: #fff;
+    padding: 8px;
+}

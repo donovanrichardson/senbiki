@@ -45,6 +45,7 @@ caption="A schematic of the LIRR: each color is a branch, fanning out east of Ja
 
 {{< figure
 src="chuoline-rapid-commons.svg"
+class="white-bg"
 alt="A route diagram of the Chuo Line (Rapid) and the Ome Line"
 caption="A route diagram of the Chuo Line (Rapid) from Tokyo to Otsuki and the Ome Line from Tachikawa to Ome, with through service to the Fujikyuko Line and toward Kofu. Diagram: “Chuoline rapid” by Nullport (2008), revised by S.S.Exp.Hashimoto, Wikimedia Commons, public domain."
 >}}
