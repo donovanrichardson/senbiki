@@ -10,12 +10,15 @@
 
 ## Intro
 
-- This post will be a departure from the usual blog topic of graph algorithms, to another network related topic: transit timetables.
-- I have spent [some time] in Japan, and one thing that [verb]ed me is a format of timetable that I had never seen before
-- image and caption of timetable.
-- these timetables can be found at stations [preposition] many Japanese railroad, metro, and bus systems
-- I thought these were efficient and could be done for transit systems outside Japan.
-- The product of this [thought/idea] is a [web app](link) that generates departure timetables in this Japanese format for all stations on the LIRR, the busiest commuter railroad in North America
+This post will be a departure from the usual blog topic of graph algorithms to another network-related topic: transit timetables.
+I have spent [some time] in Japan, and one thing that struck me was a format of timetable that I had never seen before.
+
+![JR East's weekday timetable for Nishi-Ooi Station, southbound. A small mark under a minute shows where that train goes or what type it is.](nishi-ooi-weekday-cropped.png)
+*JR East timetable, Nishi-Ooi Station, timetables.jreast.co.jp*
+
+These timetables can be found at stations on many Japanese railroad, metro, and bus systems.
+I thought they were efficient, and that the format could work for transit systems outside Japan.
+The product of this idea is a [web app](https://bit.ly/lirrboard) that generates departure timetables in this Japanese format for all stations on the LIRR, the busiest commuter railroad in North America.
 
 <!-- Section goal: state the main point (the Japanese departure-timetable format works for a branching US commuter railroad), what I built, why, and the link.
 One sentence says the move away from graph algorithms is deliberate.
@@ -33,10 +36,6 @@ Name the complication (Jamaica's 16 destinations on 9 branches); point to the tw
 
 ### The Japanese format
 
-I have interest in transit network
-
-I've been to Japan
-
 Japanese rail timetables are often presented in a format in which hours are shown on the left, and the minute of a train's departure during this hour is shown in a row to the right of the hour.
 Above or below this minute value, additional info may be shown such as whether the train is express, where it terminates, whether it has reserved seating, etc.
 
@@ -49,9 +48,9 @@ Caption: "JR East's weekday timetable for Nishi-Ooi Station, southbound.
 A small mark under a minute shows where that train goes or what type it is.
 The legend at the bottom explains the marks: 無印=逗子 and 大=大船 for destinations, 無印=普通 and 快=快速 for train type." -->
 
-Wanted to do this for LIRR
+As someone interested in transit networks, I wanted to do the same for the LIRR.
 
-### The LIRR network and The problem: destinations
+### The LIRR network and the destination problem
 
 Japanese timetables also handle trains with different destinations.
 From Tokyo, the Chuo Line (Rapid) has 11 destinations on weekdays, but it runs as a single line all the way out to Tachikawa, where the Ome Line branches off; its other branches, at Otsuki and Shiojiri, are farther out still.
@@ -76,7 +75,7 @@ Also include penn-station-lirr-board-2019-commons.jpg (the older Solari board at
 
 ## Body: the board
 
-Now, to using it.
+Now, on to using it.
 
 After navigating to the website, you will get a screen asking for an origin station.
 Say you pick Woodside, a station in Western Queens about 10 minutes from Penn Station.
@@ -87,7 +86,7 @@ Or you can not type and scroll to W near the bottom of the page, since the stati
 
 After you click on Woodside, the timetable will load.
 When it's loaded you can again use the search bar to search for destinations that are reachable from Woodside.
-Let's try Great Neck
+Let's try Great Neck.
 
 ![alt text](image-5.png)
 
