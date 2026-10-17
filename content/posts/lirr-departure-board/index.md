@@ -107,7 +107,7 @@ alt="The Woodside outbound board"
 caption="Every outbound train from Woodside, with each pill colored by its branch."
 >}}
 
-Here, the red accenting is gone, replaced by the rainbow of colors representing LIRR branches and the blue color that is ubiquitous in MTA branding.
+Here, the red accenting is gone, replaced by the rainbow of colors representing LIRR branches.
 
 ### How it's built
 
