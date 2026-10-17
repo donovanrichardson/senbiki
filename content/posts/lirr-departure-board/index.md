@@ -1,4 +1,10 @@
-# Japanese-Style Timetables for the LIRR
+---
+date: 2026-10-17T13:12:46Z
+title: "Japanese-Style Timetables for the LIRR"
+draft: true
+params:
+  author: "Donovan Richardson"
+---
 
 <!--
 ## What the reader should take away
