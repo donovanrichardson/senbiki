@@ -43,7 +43,7 @@ Japanese timetables also handle trains with different destinations. From Tokyo, 
 
 ![A schematic of the LIRR: each color is a branch, fanning out east of Jamaica](LIRR_schematic.svg)[^diagram]
 
-![JR East weekday timetable, Tokyo Station, Chuo Line Rapid westbound](tokyo-chuo-rapid-weekday-cropped.png) Credit under the image: JR East timetable, Tokyo Station, timetables.jreast.co.jp.
+![A route diagram of the Chuo Line (Rapid) from Tokyo to Otsuki and the Ome Line from Tachikawa to Ome, with through service to the Fujikyuko Line and toward Kofu](chuoline-rapid-commons.svg)[^chuodiagram]
 
 ![The board for Jamaica, outbound: 16 destinations](image-1.png) 
 
@@ -95,4 +95,5 @@ Many of the design decisions I made were particular to the LIRR situation. I fir
 [^bug]: Git: 54d1120, 2026-09-11, transit-board#3. The commit also added a coverage check that flags missing abbreviations.
 [^terminals]: Git: 2c100b8, 2026-09-11, check_headsign_coverage in the GTFS updater.
 [^pennboard]: Wikimedia Commons, File:LIRR Train Info board in Penn Station New York.jpg, by Bonnachoven, uploaded 2019-02-01, CC0 1.0 (public domain); credit not required, give it anyway.
+[^chuodiagram]: Wikimedia Commons, File:Chuoline_rapid.svg, public domain; by Nullport (2008), revised by S.S.Exp.Hashimoto (2009 to 2010). Credit is not required; give it anyway.
 [^oba]: From the OneBusAway source: the bundle builder reads GTFS into a transit graph, an object graph of agencies, stops, trips, blocks and routes, serialized to disk as TransitGraph.obj, alongside block-based stop-time indices (BlockTripIndices.obj) and a spatial index (an STRtree) over stop locations. Sources: TransitGraphImpl and FederatedTransitDataBundle in onebusaway-application-modules. The docs only say "a series of files and optimized data structures".
