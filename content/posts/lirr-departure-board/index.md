@@ -111,7 +111,7 @@ Here, the red accenting is gone, replaced by the rainbow of colors representing 
 
 ### How it's built
 
-- OneBusAway server: built from OneBusAway's own Docker image, with a MySQL 8.4 database; it imports the GTFS bundle and answers schedule queries.
+- OneBusAway server: built from OneBusAway's own Docker image, with a MySQL database; it imports the GTFS bundle and answers schedule queries.
   As the engine of this app, it gave me a convenient way to compile and query transit data without reinventing the wheel, as I did with a pre-Claude Code iteration of this app in [2020](https://github.com/donovanrichardson/deparch-api).
 - GTFS updater (Python): downloads the LIRR's GTFS feed from the MTA once a day, stages a new bundle for OneBusAway, and checks that every destination in the feed has an abbreviation.
 - Transit board API (Java): a REST API between OneBusAway and the web page.
