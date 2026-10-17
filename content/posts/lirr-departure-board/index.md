@@ -13,8 +13,8 @@
 This post will be a departure from the usual blog topic of graph algorithms to another network-related topic: transit timetables.
 I have spent [some time] in Japan, and one thing that struck me was a format of timetable that I had never seen before.
 
-![JR East's weekday timetable for Nishi-Ooi Station, southbound. A small mark under a minute shows where that train goes or what type it is.](nishi-ooi-weekday-cropped.png)
-*JR East timetable, Nishi-Ooi Station, timetables.jreast.co.jp*
+![JR East's weekday timetable for Abiko Station, Joban Line Rapid toward Ueno, Tokyo and Shinagawa. A mark above a minute shows the train type (快 is rapid); a mark below shows its destination (unmarked is Ueno, 品 is Shinagawa, 松 is Matsudo).](abiko-joban-rapid-weekday.png)
+*JR East timetable, Abiko Station, timetables.jreast.co.jp*
 
 These timetables can be found at stations on many Japanese railroad, metro, and bus systems.
 I thought they were efficient, and that the format could work for transit systems outside Japan.
