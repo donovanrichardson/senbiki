@@ -1,7 +1,6 @@
 ---
-date: 2026-10-17T13:12:46Z
+date: 2026-10-17T14:32:28Z
 title: "Japanese-Style Timetables for the LIRR"
-draft: true
 params:
   author: "Donovan Richardson"
 ---
