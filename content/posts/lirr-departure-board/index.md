@@ -6,14 +6,6 @@ params:
   author: "Donovan Richardson"
 ---
 
-<!--
-## What the reader should take away
-
-- It is possible to make timetables in this format, and I made one.
-- They can use it to find trains that leave their desired station for a desired destination, or from their desired station inbound or outbound.
-- This format is a potential and useful format for transit timetables outside Japan.
--->
-
 ## Intro
 
 This post will be a departure from the usual blog topic of graph algorithms to another network-related topic: transit timetables.
@@ -29,33 +21,12 @@ These timetables can be found at stations on many Japanese railroad, metro, and 
 I thought they were efficient, and that the format could work for transit systems outside Japan.
 The product of this idea is a [web app](https://bit.ly/lirrboard) that generates departure timetables in this Japanese format for all stations on the LIRR, the busiest commuter railroad in North America.
 
-<!-- Section goal: state the main point (the Japanese departure-timetable format works for a branching US commuter railroad), what I built, why, and the link.
-One sentence says the move away from graph algorithms is deliberate.
-
-<https://bit.ly/lirrboard> -->
-
-
-
 ## Background
-
-<!--
-Section goal: show that the format is achievable for the LIRR despite its extra branching.
-Name the complication (Jamaica's 16 destinations on 9 branches); point to the two existing practices the board combines: Japanese destination marks with a legend, and the LIRR's written-out destinations with a color per branch.
--->
 
 ### The Japanese format
 
 Japanese rail timetables are often presented in a format in which hours are shown on the left, and the minute of a train's departure during this hour is shown in a row to the right of the hour.
 Above or below this minute value, additional info may be shown, such as whether the train is express, where it terminates, whether it has reserved seating, etc.
-
-<!-- Include image of Japan timetable: nishi-ooi-weekday-cropped.png (JR East, Nishi-Ooi Station, weekday, with both legend rows).
-Optionally nishi-ooi-saturday-holiday-cropped.png (same station, Saturday and holiday, which adds a third legend row ■=時刻変更, schedule change).
-Caption for that image: "The same station's Saturday and holiday timetable.
-It adds a third legend row, 変更・注意マーク, where ■=時刻変更 flags a time that has changed; here it marks the 8:30 train."
-Credit under the image: JR East timetable, Nishi-Ooi Station, timetables.jreast.co.jp.
-Caption: "JR East's weekday timetable for Nishi-Ooi Station, southbound.
-A small mark under a minute shows where that train goes or what type it is.
-The legend at the bottom explains the marks: 無印=逗子 and 大=大船 for destinations, 無印=普通 and 快=快速 for train type." -->
 
 As someone interested in transit networks, I wanted to do the same for the LIRR.
 
@@ -88,10 +59,6 @@ src="penn-station-lirr-board-2019-commons.jpg"
 alt="The LIRR Train Information board at Penn Station in 2019, with destinations on bars colored by branch"
 caption="The first train, a Port Washington branch train, terminates in Great Neck before reaching Port Washington. Another train with the same color later runs all the way to Port Washington. (Long Beach bears the orange color, which looks similar here.) Similarly, a Ronkonkoma train will terminate in Ronkonkoma about 80 minutes after departure, where passengers can soon meet another Ronkonkoma branch train bound for Yaphank. Both of these are colored purple. (About 20 minutes after departure, the Ronkonkoma train will also have a timed transfer with the brown-coded Far Rockaway train at Jamaica.) Photo: “LIRR Train Info board in Penn Station New York” by Bonnachoven (2019), Wikimedia Commons, public domain (CC0)."
 >}}
-
-
-<!-- Include image of the LIRR's convention: penn-station-lirr-board-own-photo.jpg (my photo of the current digital departure board at Penn Station; each destination is written out on a bar colored by branch, and Huntington appears twice in the same blue).
-Also include penn-station-lirr-board-2019-commons.jpg (the older Solari board at Penn Station) for the shared-color point: Ronkonkoma and Yaphank share a color, two destinations on one branch.[^pennboard] -->
 
 ## Using the board
 
@@ -140,7 +107,6 @@ caption="Every outbound train from Woodside, with each pill colored by its branc
 >}}
 
 Here, the red accenting is gone, replaced by the rainbow of colors representing LIRR branches and the blue color that is ubiquitous in MTA branding.
-
 
 ### How it's built
 
