@@ -11,7 +11,7 @@
 ## Intro
 
 This post will be a departure from the usual blog topic of graph algorithms to another network-related topic: transit timetables.
-I have spent [some time] in Japan, and one thing that struck me was a format of timetable that I had never seen before.
+During the time I have spent in Japan, one thing that struck me was a format of timetable that I had never seen before.
 
 ![JR East's weekday timetable for Abiko Station, Joban Line Rapid toward Ueno, Tokyo and Shinagawa. A mark above a minute shows the train type (快 is rapid); a mark below shows its destination (unmarked is Ueno, 品 is Shinagawa, 松 is Matsudo).](abiko-joban-rapid-weekday.png)
 *JR East timetable, Abiko Station, timetables.jreast.co.jp*
