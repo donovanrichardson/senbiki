@@ -90,7 +90,7 @@ Let's try Great Neck.
 
 ![alt text](image-5.png)
 
-Recalling the earlier picture of the overhead departure board at Penn Station, you can see that most of the departures from Woodside to Great Neck terminate at either Port Washington or Great Neck.
+Recalling the earlier picture of the overhead departure board at Penn Station, you can see that all of the departures from Woodside to Great Neck terminate at either Port Washington or Great Neck.
 The app is coded so that when a terminus makes up more than 2/3 of departures, it is left unmarked on the timetable.
 The header shows that these unlabeled departures terminate at Port Washington, while departures with a red indicator pill labeled `GNK` will terminate at Great Neck.
 Also, just like the earlier overhead board, this board uses a red color scheme for the Port Washington branch destinations.
