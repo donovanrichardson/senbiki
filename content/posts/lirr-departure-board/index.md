@@ -63,11 +63,11 @@ So a timetable for the LIRR has to show where each train goes.
 
 ![The board for Jamaica, outbound: 16 destinations](image-1.png) 
 
-This branching situation necessitates a different kind of [symbology] from that typically used on Japanese timetables.
+This branching situation necessitates a different kind of visualization from that typically used on Japanese timetables.
 The paradigm that the MTA uses is that branches are color-coded so that signage for destinations on a particular branch bears the color of that branch.
-In my departure timetable web app I follow the same [symbology] paradigm.
+In my departure timetable web app I follow the same visualization paradigm.
 This paradigm is shown in the overhead departure board which was removed from Penn Station in the early 2020s.
-![the first train, a Port Washington branch train, terminates in Great Neck before reaching Port Washington. Another train with the same color later [moves] all the way to Port Washington. (Long Beach bears the Orange color which looks similar here. Similarly, a Ronkonkoma train will terminate in Ronkonkoma about 90 minutes after departure, where passengers can soon meet another Ronkonkoma branch train bound for Yaphank. Both of these are colored purple. (about 20 minutes after departure, the Ronkonkoma train will also have a timed transfer with the brown-coded Far Rockaway train at Jamaica ))](penn-station-lirr-board-2019-commons.jpg)
+![the first train, a Port Washington branch train, terminates in Great Neck before reaching Port Washington. Another train with the same color later runs all the way to Port Washington. (Long Beach bears the Orange color which looks similar here. Similarly, a Ronkonkoma train will terminate in Ronkonkoma about 90 minutes after departure, where passengers can soon meet another Ronkonkoma branch train bound for Yaphank. Both of these are colored purple. (about 20 minutes after departure, the Ronkonkoma train will also have a timed transfer with the brown-coded Far Rockaway train at Jamaica ))](penn-station-lirr-board-2019-commons.jpg)
 
 
 <!-- Include image of the LIRR's convention: penn-station-lirr-board-own-photo.jpg (my photo of the current digital departure board at Penn Station; each destination is written out on a bar colored by branch, and Huntington appears twice in the same blue).
@@ -92,9 +92,9 @@ Let's try Great Neck.
 
 Recalling the pic before of the departure board featured overhead at Penn Station, you can see that most the departures from Woodside to Great Neck terminate either at Port Washington or Great Neck.
 The app is coded so that when a terminus makes up more than 2/3 of departures, it is left unmarked on the timetable.
-The header [indicates accordingly] that unlabeled departures terminate at Port Washington, while departures with a red indicator pill labeled `GNK` will terminate at Great Neck.
+The header shows that these unlabeled departures terminate at Port Washington, while departures with a red indicator pill labeled `GNK` will terminate at Great Neck.
 And also just like the earlier overhead board, this board uses a red color scheme for the Port Washington branch destinations.
-Since this timetable deals only with Port Washington branch trains, most design elements [are also red themed].
+Since this timetable deals only with Port Washington branch trains, most design elements share the red theme.
 
 ![alt text](image-3.png)
 
@@ -119,7 +119,7 @@ Here, the red accenting is gone, replaced with the rainbow of colors representin
 ## Final words
 
 Many of the design decisions I made were particular to the LIRR situation.
-I first tried to make a departure timetable [app thing] that will be universal, but different systems have different structures to their services, and riders may expect certain features that are not generalizable to every network.
+I first tried to make a departure timetable generator that will be universal, but different systems have different structures to their services, and riders may expect certain features that are not generalizable to every network.
 Still I'd like to do this for other NYC-area commuter rail services too.
 For now, try it at <https://bit.ly/lirrboard>.
 Feedback from LIRR commuters is welcome on my LinkedIn post about the board, <https://lnkd.in/p/gvgmEXC4>.
