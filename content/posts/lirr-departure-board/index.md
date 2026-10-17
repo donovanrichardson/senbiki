@@ -10,12 +10,6 @@ params:
 This post is a departure from the usual blog topic of graph algorithms to another network-related topic: transit timetables.
 During the time I have spent in Japan, one thing that struck me was a timetable format that I had never seen before.
 
-{{< figure
-src="abiko-joban-rapid-weekday.png"
-alt="JR East weekday timetable for Abiko Station, Joban Line Rapid"
-caption="JR East's weekday timetable for Abiko Station, Joban Line Rapid toward Ueno, Tokyo, and Shinagawa. A mark above a minute shows the train type (快 is rapid); a mark below shows its destination (unmarked is Ueno, 品 is Shinagawa, 松 is Matsudo). Timetable: JR East, Abiko Station, timetables.jreast.co.jp."
->}}
-
 These timetables can be found at stations on many Japanese railroad, metro, and bus systems.
 I thought they were efficient, and that the format could work for transit systems outside Japan.
 The product of this idea is a [web app](https://bit.ly/lirrboard) that generates departure timetables in this Japanese format for all stations on the Long Island Rail Road (LIRR), the busiest commuter railroad in North America.
@@ -26,6 +20,13 @@ The product of this idea is a [web app](https://bit.ly/lirrboard) that generates
 
 Japanese rail timetables are often presented in a format in which hours are shown on the left, and the minute of each train's departure during that hour is shown in a row to the right of the hour.
 Above or below this minute value, additional information may be shown, such as whether the train is express, where it terminates, or whether it has reserved seating.
+
+{{< figure
+src="abiko-joban-rapid-weekday.png"
+class="narrow"
+alt="JR East weekday timetable for Abiko Station, Joban Line Rapid"
+caption="JR East's weekday timetable for Abiko Station, Joban Line Rapid toward Ueno, Tokyo, and Shinagawa. A mark above a minute shows the train type (快 is rapid); a mark below shows its destination (unmarked is Ueno, 品 is Shinagawa, 松 is Matsudo). Timetable: JR East, Abiko Station, timetables.jreast.co.jp."
+>}}
 
 As someone interested in transit networks, I wanted to make this kind of timetable for the LIRR.
 

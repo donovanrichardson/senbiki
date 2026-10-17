@@ -5,3 +5,9 @@ figure.white-bg img {
     background: #fff;
     padding: 8px;
 }
+
+figure.narrow img {
+    max-width: 66.667%;
+    margin-left: auto;
+    margin-right: auto;
+}
