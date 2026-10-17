@@ -47,7 +47,7 @@ caption="A schematic of the LIRR: each color is a branch, fanning out east of Ja
 src="chuoline-rapid-commons.svg"
 class="white-bg"
 alt="A route diagram of the Chuo Line (Rapid) and the Ome Line"
-caption="A route diagram of the Chuo Line (Rapid) from Tokyo to Otsuki. The Ome line runs Chuo Line (Rapid) service after branching from the Chuo Line at Tachikawa. There are two other branches which exist beyond the edge of this diagram. Diagram: “Chuoline rapid” by Nullport (2008), revised by S.S.Exp.Hashimoto, Wikimedia Commons, public domain."
+caption="A route diagram of the Chuo Line (Rapid) from Tokyo to Otsuki. The Ome Line runs Chuo Line (Rapid) service after branching from the Chuo Line at Tachikawa. There are two other branches which exist beyond the edge of this diagram. Diagram: “Chuoline rapid” by Nullport (2008), revised by S.S.Exp.Hashimoto, Wikimedia Commons, public domain."
 >}}
 
 This branching situation necessitates a different kind of visualization from that typically used on Japanese timetables.
