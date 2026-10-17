@@ -81,7 +81,6 @@ Here, the red accenting is gone, replaced with the rainbow of colors representin
 - GTFS updater (Python): downloads the LIRR's GTFS feed from the MTA once a day, stages a new bundle for OneBusAway, and checks that every destination in the feed has an abbreviation.
 - Transit board API (Java): a REST API between OneBusAway and the web page. It works out each trip's destination, the hour rows (including hours past 23), and other intricacies of the GTFS format.
 - Front end (Svelte, served by nginx): the timetable grid, the pills, the destination filter, and the Japanese translation/transliteration.
-- Monitor (Python): logs the host's CPU, memory and disk use and each container's resource use.
 - All of it runs with Docker Compose, with a memory and CPU limit on each service.
 
 ## Final words
